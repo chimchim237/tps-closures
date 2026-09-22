@@ -84,7 +84,15 @@ def main():
         pg.mouse.move(pt[0], pt[1]); pg.wait_for_timeout(200)
         t = pg.eval_on_selector_all(".tip", "e=>e.map(x=>x.innerText).join('')")
         check("hovering a remaining site shows its name and address", "Carnegie" in t and "56th" in t, t[:80])
-        check("cursor is 'help' over a remaining site", pg.evaluate("()=>window.__map.getCanvas().style.cursor") == "help")
+        check("cursor is 'pointer' over a remaining site", pg.evaluate("()=>window.__map.getCanvas().style.cursor") == "pointer")
+        # numbered pin: hover must show the school, never the tract underneath
+        pin = pg.query_selector_all(".pin")[1]
+        pin.hover(); pg.wait_for_timeout(120)
+        pg.mouse.move(pg.evaluate("()=>document.querySelectorAll('.pin')[1].getBoundingClientRect().x+3"),
+                      pg.evaluate("()=>document.querySelectorAll('.pin')[1].getBoundingClientRect().y+3")); pg.wait_for_timeout(200)
+        t = pg.eval_on_selector_all(".tip", "e=>e.map(x=>x.innerText).join('')").upper()
+        lbl = pin.get_attribute("aria-label").split(",")[0].upper()
+        check("hovering a numbered pin shows that school, same as a green dot", lbl in t and "COUNTY" not in t, (lbl, t[:80]))
         pt = click_layer_feature("chg-dot", "name", "S.O.A.R.")
         pg.mouse.move(pt[0], pt[1]); pg.wait_for_timeout(200)
         t = pg.eval_on_selector_all(".tip", "e=>e.map(x=>x.innerText).join('')")
@@ -171,6 +179,24 @@ def main():
         check("clicking a change marker on the map opens its card", "S.O.A.R." in body, body[:60])
         check("selected change marker is drawn in the selected state",
               pg.evaluate("()=>window.__map.getFeatureState({source:'schools',id:'soar'}).sel===true"))
+        pg.keyboard.press("Escape")
+
+        print("\n--- remaining sites: same click behavior ---")
+        pg.click("#zrst"); pg.wait_for_timeout(700)
+        pt = click_layer_feature("open-dot", "name", "Carnegie Elementary")
+        pg.mouse.click(pt[0], pt[1]); pg.wait_for_timeout(250)
+        body = pg.eval_on_selector_all(".pop", "e=>e.map(x=>x.innerText).join('')").upper()
+        check("clicking a remaining site opens a card with address, ZIP and tract rows",
+              "CARNEGIE" in body and "ADDRESS" in body and "ZIP" in body and "TRACT" in body, body[:90])
+        check("remaining-site card is labelled as such", "REMAINING DISTRICT SITE" in body)
+        check("hover tip is dismissed while its card is open", pg.eval_on_selector_all(".tip", "e=>e.length") == 0)
+        check("selected remaining site is drawn in the selected state",
+              pg.evaluate("()=>{const f=window.__data.schools.features.find(f=>f.properties.name==='Carnegie Elementary');"
+                          "return window.__map.getFeatureState({source:'schools',id:f.properties.id}).sel===true}"))
+        check("its tract is outlined", pg.evaluate("()=>JSON.stringify(window.__map.getFilter('tract-sel'))").find("__none__") < 0)
+        pg.uncheck("#t-open"); pg.wait_for_timeout(150)
+        check("hiding remaining sites closes a remaining site's card", pg.eval_on_selector_all(".pop", "e=>e.length") == 0)
+        pg.check("#t-open"); pg.wait_for_timeout(150)
         pg.keyboard.press("Escape")
 
         print("\n--- sidebar row → flyTo ---")

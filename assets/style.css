@@ -113,6 +113,7 @@ header.mast{border-bottom:1px solid var(--rule);background:var(--paper)}
 .pop-n{font-family:"Archivo",sans-serif;font-weight:700;font-size:12px;color:var(--signal-ink);background:var(--signal);
   border-radius:3px;min-width:21px;text-align:center;padding:2px 0;font-variant-numeric:tabular-nums;flex:none;margin-top:1px}
 .pop-n.chg-badge{background:#fff;color:var(--site);border:2px solid var(--site);font-size:10px;line-height:1}
+.pop-n.open-badge{background:transparent;color:var(--site);font-size:14px;line-height:1;padding:3px 0}
 .pop-t{flex:1;min-width:0}
 .pop-t h3{font-family:"Zilla Slab",Georgia,serif;font-weight:700;font-size:15.5px;line-height:1.2;margin:0;color:var(--ink);text-wrap:balance}
 .pop-lv{font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;letter-spacing:.09em;font-size:9.5px;color:var(--signal);

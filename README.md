@@ -78,7 +78,7 @@ private repository never needs to reference this one.
 
 `tests/test_map.py` drives the real page in headless Chromium with Playwright and exercises
 hover, click, keyboard, every toggle, the tract/ZIP switch, zoom and pan, phone width and
-dark mode — 68 checks. It runs offline against `?style=blank`.
+dark mode — 75 checks. It runs offline against `?style=blank`.
 
 ```sh
 pip install playwright && playwright install chromium

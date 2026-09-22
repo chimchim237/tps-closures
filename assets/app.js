@@ -121,7 +121,9 @@ function addLayers() {
 
   map.addLayer({ id: 'open-dot', type: 'circle', source: 'schools', filter: ['==', ['get', 'status'], 'open'],
     layout: { visibility: state.open ? 'visible' : 'none' },
-    paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 9, 5, 12, 7, 15, 9], 'circle-color': token('--site') } });
+    paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 9, 5, 12, 7, 15, 9], 'circle-color': token('--site'),
+      'circle-stroke-color': ink,
+      'circle-stroke-width': ['case', ['boolean', ['feature-state', 'sel'], false], 2.5, 0] } });
   map.addLayer({ id: 'chg-dot', type: 'circle', source: 'schools', filter: ['==', ['get', 'status'], 'change'],
     layout: { visibility: state.chg ? 'visible' : 'none' },
     paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 9, 6.5, 12, 8.6, 15, 11], 'circle-color': '#ffffff',
@@ -158,11 +160,18 @@ function areaTip(p, unit) {
     (p.reliability === 'small' ? '<br>Small population &mdash; read with care.' : p.reliability === 'wide' ? '<br>Wide margin of error.' : '') + '</div>';
 }
 
+const DOT_LAYERS = ['chg-dot', 'open-dot'];
+function dotAt(point) {
+  const hits = map.queryRenderedFeatures(point, { layers: DOT_LAYERS.filter((l) => map.getLayer(l)) });
+  return hits.length ? S.find((x) => x.id === hits[0].properties.id) : null;
+}
+
 map.on('mousemove', (e) => {
-  const dots = map.queryRenderedFeatures(e.point, { layers: ['chg-dot', 'open-dot'].filter((l) => map.getLayer(l)) });
-  if (dots.length) {
-    const s = S.find((x) => x.id === dots[0].properties.id);
-    map.getCanvas().style.cursor = s.status === 'change' ? 'pointer' : 'help';
+  // over a numbered pin: the pin's own hover handler owns the tooltip, so the tract must not replace it
+  if (e.originalEvent.target.closest('.pin')) return;
+  const s = dotAt(e.point);
+  if (s) {
+    map.getCanvas().style.cursor = 'pointer';
     if (state.sel !== s) showTip([s.lon, s.lat], schoolTip(s)); else tip.remove();
     return;
   }
@@ -185,10 +194,13 @@ function cardHTML(s) {
     (t.poverty_pct != null ? `<br>${t.poverty_pct.toFixed(1)}% below poverty` : '') +
     (t.county === 'Osage' ? '<br>Osage County' : '') : '';
   const closing = s.status === 'closure';
-  const head = closing ? `<span class="pop-n">${s.number}</span>` : `<span class="pop-n chg-badge">&#9633;</span>`;
+  const head = closing ? `<span class="pop-n">${s.number}</span>`
+    : s.status === 'change' ? `<span class="pop-n chg-badge">&#9633;</span>`
+    : `<span class="pop-n open-badge">&#9679;</span>`;
   const kicker = closing
     ? `<span class="pop-lv">Proposed for closure &middot; ${s.level === 'Elementary' ? 'Elementary site' : 'Secondary site'}</span>`
-    : `<span class="pop-lv alt">Stays open &middot; building change</span>`;
+    : s.status === 'change' ? `<span class="pop-lv alt">Stays open &middot; building change</span>`
+    : `<span class="pop-lv alt">Remaining district site${s.level ? ' &middot; ' + s.level : ''}</span>`;
   return `<div class="pop-hd">${head}<div class="pop-t"><h3>${s.name}</h3>${kicker}</div>` +
     `<button class="pop-x" type="button" aria-label="Close">&times;</button></div><dl>` +
     row('Address', `${s.address}<br>Tulsa, OK ${s.zip}`) +
@@ -203,7 +215,8 @@ function applySelection() {
   const s = state.sel;
   if (map.getLayer('tract-sel')) map.setFilter('tract-sel', ['==', ['get', 'geoid'], s ? s.tract_geoid : '__none__']);
   if (map.getLayer('zip-sel')) map.setFilter('zip-sel', ['==', ['get', 'zip'], s ? s.zip : '__none__']);
-  for (const c of changes) if (map.getSource('schools')) map.setFeatureState({ source: 'schools', id: c.id }, { sel: c === s });
+  if (map.getSource('schools'))
+    for (const c of [...changes, ...opens]) map.setFeatureState({ source: 'schools', id: c.id }, { sel: c === s });
 }
 function openCard(s) {
   if (state.sel && state.sel !== s) unmark(state.sel);
@@ -225,9 +238,9 @@ function unmark(s) { if (s.el) s.el.classList.remove('on'); if (s.li) s.li.class
 function clearSel() { if (state.sel) unmark(state.sel); state.sel = null; if (card) card.remove(); applySelection(); }
 
 map.on('click', (e) => {
-  const dots = map.queryRenderedFeatures(e.point, { layers: ['chg-dot'].filter((l) => map.getLayer(l)) });
-  if (dots.length) { openCard(S.find((x) => x.id === dots[0].properties.id)); return; }
-  if (!e.originalEvent.target.closest('.pin')) clearSel();
+  if (e.originalEvent.target.closest('.pin')) return;   // the pin's own handler opened its card
+  const s = dotAt(e.point);
+  if (s) openCard(s); else clearSel();
 });
 addEventListener('keydown', (e) => { if (e.key === 'Escape') clearSel(); });
 
@@ -267,7 +280,8 @@ $('t-inc').addEventListener('change', (e) => { state.income = e.target.checked;
   for (const u of ['tract', 'zip']) if (map.getLayer(u + '-fill')) map.setPaintProperty(u + '-fill', 'fill-opacity', state.income ? 0.74 : 0); });
 $('t-chg').addEventListener('change', (e) => { state.chg = e.target.checked; setVis('chg-dot', state.chg);
   if (!state.chg && state.sel && state.sel.status === 'change') clearSel(); tip.remove(); });
-$('t-open').addEventListener('change', (e) => { state.open = e.target.checked; setVis('open-dot', state.open); tip.remove(); });
+$('t-open').addEventListener('change', (e) => { state.open = e.target.checked; setVis('open-dot', state.open);
+  if (!state.open && state.sel && state.sel.status === 'open') clearSel(); tip.remove(); });
 $('t-zip').addEventListener('change', (e) => { state.ziplab = e.target.checked; setVis('zip-label', state.ziplab); });
 $('zrst').addEventListener('click', () => { clearSel(); map.fitBounds(bounds, { padding: HOME_PAD, duration: 600 }); });
 
