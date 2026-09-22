@@ -1,10 +1,8 @@
 name: Deploy to earthseed.technology/tps-closures
-
 on:
   push:
     branches: [main]
   workflow_dispatch:
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -12,22 +10,45 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v4
 
+      - name: Resolve and check the target path
+        id: target
+        env:
+          REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
+        run: |
+          root="$(printf '%s' "$REMOTE_PATH" | tr -d '[:space:]')"
+          root="${root%/}"
+          target="$root/tps-closures"
+          case "$target" in
+            /home/*/tps-closures) ;;
+            *) echo "Refusing to deploy: target '$target' is not /home/<user>/.../tps-closures"; exit 1 ;;
+          esac
+          echo "target=$target" >> "$GITHUB_OUTPUT"
+          echo "Deploying to $target"
+
       - name: Set up the SSH key
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
         run: |
           mkdir -p ~/.ssh
           printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p "${{ secrets.SSH_PORT }}" -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
+          host="$(printf '%s' "$SSH_HOST" | tr -d '[:space:]')"
+          port="$(printf '%s' "$SSH_PORT" | tr -d '[:space:]')"
+          ssh-keyscan -p "$port" -H "$host" >> ~/.ssh/known_hosts
 
       - name: Mirror the repo into the tps-closures subfolder
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          TARGET: ${{ steps.target.outputs.target }}
         run: |
+          host="$(printf '%s' "$SSH_HOST" | tr -d '[:space:]')"
+          port="$(printf '%s' "$SSH_PORT" | tr -d '[:space:]')"
+          user="$(printf '%s' "$SSH_USER" | tr -d '[:space:]')"
+          ssh -i ~/.ssh/deploy_key -p "$port" "$user@$host" "mkdir -p '$TARGET'"
           rsync -rlvz --delete \
-            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
-            --rsync-path="mkdir -p '${{ secrets.REMOTE_PATH }}/tps-closures' && rsync" \
-            --exclude '.git' \
-            --exclude '.github' \
-            --exclude '.gitignore' \
-            --exclude 'tests' \
-            --exclude '.DS_Store' \
-            ./ \
-            "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_PATH }}/tps-closures/"
+            -e "ssh -i ~/.ssh/deploy_key -p $port" \
+            --exclude '.git' --exclude '.github' --exclude '.gitignore' --exclude 'tests' --exclude '.DS_Store' \
+            ./ "$user@$host:$TARGET/"
