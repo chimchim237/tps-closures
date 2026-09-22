@@ -24,6 +24,7 @@
     </div>
     <div class="stamp">
       <div class="hot"><b>17</b>proposed closures</div>
+      <div><b id="n-students">4,726</b>students affected</div>
       <div><b>68</b>sites remaining</div>
       <div><b>$12M</b>cuts sought</div>
     </div>
@@ -61,6 +62,10 @@
           <svg width="19" height="19" aria-hidden="true"><circle cx="9.5" cy="9.5" r="6.5" fill="var(--site)"/></svg>
           Remaining district site &mdash; click it
         </div>
+        <div class="key">
+          <svg width="19" height="19" aria-hidden="true"><circle cx="9.5" cy="9.5" r="6" fill="var(--site)" stroke="var(--signal)" stroke-width="2.5"/></svg>
+          Welcoming site &mdash; where a selected school's students would go
+        </div>
       </div>
       <p class="ramp-note crit">Every site in the proposal enrolled <b>fewer than 400 students</b>
       with <b>building use under 65%</b>, and none is projected to gain enrollment. The 14
@@ -83,6 +88,13 @@
         <label class="tg"><input type="checkbox" id="t-open" checked> Remaining sites (64)</label>
         <label class="tg"><input type="checkbox" id="t-zip" checked> ZIP labels</label>
       </div>
+      <label class="sel-l" for="hl">Highlight one set of schools</label>
+      <select id="hl" class="sel">
+        <option value="">Everything</option>
+        <optgroup label="Consolidation groups"></optgroup>
+        <optgroup label="Feeder patterns"></optgroup>
+      </select>
+      <p class="ramp-note hl-note" id="hl-note"></p>
     </div>
 
     <div class="card">
@@ -90,10 +102,56 @@
       <ul class="roll" id="roll"></ul>
     </div>
 
-    <div class="card">
-      <h2>Other building changes</h2>
+    <details class="card fold">
+      <summary><h2>Consolidation groups</h2></summary>
+      <p class="ramp-note">The district paired each closing school with the nearest schools that
+      have room (a target of 85% building use or less) and grouped them by geography. These
+      groups are the district's own; they cut across feeder patterns. Click a group to show only
+      its schools.</p>
+      <ul class="roll" id="grouproll"></ul>
+    </details>
+
+    <details class="card fold">
+      <summary><h2>Feeder patterns</h2></summary>
+      <p class="ramp-note">A feeder pattern is the set of elementary schools that send students to
+      one middle and high school. Click a pattern to show only its schools; a school's card shows
+      its current and proposed feeder. Building use is TPS's figure for the whole pattern, now
+      and under the proposal.</p>
+      <ul class="roll" id="feedroll"></ul>
+    </details>
+
+    <details class="card fold">
+      <summary><h2>Other building changes</h2></summary>
       <ul class="roll" id="chgroll"></ul>
-    </div>
+    </details>
+
+    <details class="card fold">
+      <summary><h2>How sites were chosen</h2></summary>
+      <p class="ramp-note">Three primary criteria: student enrollment, building size and use, and
+      student outcomes. Supporting data: enrollment trends, safe walking paths, unique programs,
+      student demographics and needs, retention and transfer history, travel distance, nearby
+      options, and physical barriers such as railroads and highways.</p>
+      <p class="ramp-note">Boundary changes favored the shortest distance to a welcoming school
+      with 85% or less building use after the move, and avoided crossing railroads and major
+      roads.</p>
+    </details>
+
+    <details class="card fold">
+      <summary><h2>Budget and enrollment context</h2></summary>
+      <p class="ramp-note">The board's 27 July resolution requires at least <b>$12 million</b> in
+      savings by 19 October. The proposal counts <b>$11.1 million</b> from closures ($8.5 million
+      in staffing allocations, $2.6 million in operating costs, plus $0.9 million deferred) and
+      <b>$1.5 million</b> from central office reductions.</p>
+      <p class="ramp-note">TPS reports enrollment down <b>779 students</b> from a year earlier as of
+      18 September 2026, and cites an Esri projection of a <b>2.5% decline</b> in children over the
+      next five years. It states that about <b>2,600 additional students</b> would be needed to
+      balance the budget at current staffing levels.</p>
+      <p class="ramp-note">Of 697 community survey responses, 65% chose fewer schools with more
+      consistent services over more schools with reduced services (18% more schools, 16% unsure).</p>
+      <p class="ramp-note">Staffing ratios stay at 24:1 (K&ndash;2), 28:1 (3&ndash;5), 29:1
+      (middle) and 33:1 (high). Bond funds flagged for closing sites would be redirected to
+      receiving sites through the bond oversight committee.</p>
+    </details>
   </aside>
 </div>
 
@@ -102,9 +160,13 @@
     <div>
       <h3>School list</h3>
       <p>The 17 closures and the building changes come from slide 27 of the TPS board
-      presentation <em>Superintendent's Proposal to Address Budget Deficit</em>
-      (14 elementary, 2 middle and 1 alternative site), presented at the
-      21 September 2026 board meeting.</p>
+      presentation <a href="https://resources.finalsite.net/images/v1790037783/tulsaschoolsorg/mj2h4piedeoyfz4g2u40/92126SuperintendentBudgetRecommendations.pdf"><em>Superintendent's
+      Proposal to Address Budget Deficit</em></a> (14 elementary, 2 middle and 1 alternative
+      site), presented at the 21 September 2026 board meeting. Consolidation groups, welcoming
+      sites, students and families affected, feeder shifts, building use by feeder, selection
+      criteria and the budget figures come from slides 7&ndash;49 of the same deck.</p>
+      <p>Feeder-pattern membership for all 85 sites: TPS <em>Our Schools</em> pages
+      (tulsaschools.org/enrollment/our-schools), feeder headings, read 22 September 2026.</p>
       <p>Addresses for all 85 mapped campuses: <em>Tulsa Public Schools Directory of Schools,
       2026&ndash;2027</em>, the district's printable directory, cross-checked against
       individual school site footers on <code>tulsaschools.org</code>.</p>
@@ -145,6 +207,11 @@
       seeking $12 million in cuts; board votes were scheduled for 21 September, 5 October and
       19 October 2026 (<a href="https://tulsaflyer.org/2026/09/18/schools-families/post/tulsa-public-schools-proposed-12m-cuts/">Tulsa
       Flyer</a>, 18 September 2026).</p>
+      <p>What's next (slide 52): community survey open through 16 October; information sessions
+      29 September, 6 October, 7 October (Spanish), 8 October, 12 October and 14 October 2026;
+      details at tulsaschools.org/planning. Before winter break the district says it will answer
+      questions on calendar and bell times, transportation, home-school assignments, transfers and
+      before/after-school care.</p>
       <p class="repo">Data and code: this page is an open repository. Corrections and additions
       are welcome as pull requests &mdash; see the README for where each figure lives.</p>
     </div>

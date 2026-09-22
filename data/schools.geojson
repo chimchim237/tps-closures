@@ -25,7 +25,14 @@
     "staffing": "No full-time music teacher",
     "bond": null,
     "building": "Would receive Felicitas Mendez International School.",
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "group": "Elementary group 1",
+    "group_students": 854,
+    "group_families": 686,
+    "welcoming": [
+     "hawthorne-elementary",
+     "whitman-elementary"
+    ]
    }
   },
   {
@@ -52,7 +59,14 @@
     "staffing": "No full-time music teacher",
     "bond": "Renovated through the 2021 bond package",
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "group": "Elementary group 3",
+    "group_students": 941,
+    "group_families": 792,
+    "welcoming": [
+     "macarthur-elementary",
+     "mckinley-elementary"
+    ]
    }
   },
   {
@@ -79,7 +93,14 @@
     "staffing": "No full-time art teacher",
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "group": "Elementary group 5",
+    "group_students": 787,
+    "group_families": 732,
+    "welcoming": [
+     "skelly-elementary",
+     "disney-elementary"
+    ]
    }
   },
   {
@@ -106,7 +127,14 @@
     "staffing": "No full-time music teacher",
     "bond": null,
     "building": "Would house the district’s elementary alternative education program — the SOAR Academy.",
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "group": "Elementary group 1",
+    "group_students": 854,
+    "group_families": 686,
+    "welcoming": [
+     "wayman-tisdale-fine-arts-academy",
+     "burroughs-elementary"
+    ]
    }
   },
   {
@@ -133,7 +161,14 @@
     "staffing": "No full-time art teacher",
     "bond": "Identified for renovation in the 2026 bond proposal",
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "group": "Elementary group 5",
+    "group_students": 787,
+    "group_families": 732,
+    "welcoming": [
+     "skelly-elementary",
+     "macarthur-elementary"
+    ]
    }
   },
   {
@@ -160,7 +195,14 @@
     "staffing": "No full-time art teacher; no full-time music teacher",
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "group": "Elementary group 3",
+    "group_students": 941,
+    "group_families": 792,
+    "welcoming": [
+     "lewis-and-clark-elementary",
+     "cooper-elementary"
+    ]
    }
   },
   {
@@ -187,7 +229,14 @@
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "group": "Elementary group 4",
+    "group_students": 538,
+    "group_families": 443,
+    "welcoming": [
+     "salk-elementary",
+     "carnegie-elementary"
+    ]
    }
   },
   {
@@ -214,7 +263,13 @@
     "staffing": "No full-time music teacher",
     "bond": "Identified for renovation in the 2026 bond proposal",
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "group": "Elementary group 4",
+    "group_students": 538,
+    "group_families": 443,
+    "welcoming": [
+     "mcclure-elementary"
+    ]
    }
   },
   {
@@ -241,7 +296,14 @@
     "staffing": "No full-time music teacher",
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "group": "Elementary group 3",
+    "group_students": 941,
+    "group_families": 792,
+    "welcoming": [
+     "hamilton-elementary",
+     "mckinley-elementary"
+    ]
    }
   },
   {
@@ -268,7 +330,14 @@
     "staffing": "No full-time music teacher",
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "group": "Elementary group 5",
+    "group_students": 787,
+    "group_families": 732,
+    "welcoming": [
+     "cooper-elementary",
+     "disney-elementary"
+    ]
    }
   },
   {
@@ -295,7 +364,13 @@
     "staffing": "No full-time art teacher",
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "group": "Elementary group 6",
+    "group_students": 228,
+    "group_families": 181,
+    "welcoming": [
+     "clinton-west-elementary"
+    ]
    }
   },
   {
@@ -322,7 +397,15 @@
     "staffing": null,
     "bond": "Renovated through the 2021 bond package",
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "group": "Elementary group 2",
+    "group_students": 658,
+    "group_families": 550,
+    "welcoming": [
+     "kendall-whittier-elementary",
+     "owen-elementary",
+     "felicitas-mendez-international"
+    ]
    }
   },
   {
@@ -349,7 +432,15 @@
     "staffing": "No full-time art teacher; no full-time music teacher",
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "group": "Elementary group 2",
+    "group_students": 658,
+    "group_families": 550,
+    "welcoming": [
+     "felicitas-mendez-international",
+     "hawthorne-elementary",
+     "celia-clinton-elementary"
+    ]
    }
   },
   {
@@ -376,7 +467,14 @@
     "staffing": "No full-time music teacher",
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "group": "Elementary group 1",
+    "group_students": 854,
+    "group_families": 686,
+    "welcoming": [
+     "celia-clinton-elementary",
+     "hamilton-elementary"
+    ]
    }
   },
   {
@@ -403,7 +501,14 @@
     "staffing": null,
     "bond": null,
     "building": "Central High School, sharing this campus, would stop being a neighborhood school and become the hub for the district’s secondary alternative programs and Tulsa Virtual Academy.",
-    "coord_source": "Wikipedia infobox (no Census address range for this block)"
+    "coord_source": "Wikipedia infobox (no Census address range for this block)",
+    "group": "Secondary group 2",
+    "group_students": 720,
+    "group_families": 653,
+    "welcoming": [
+     "monroe-demonstration-academy",
+     "webster-middle-school"
+    ]
    }
   },
   {
@@ -430,7 +535,12 @@
     "staffing": null,
     "bond": "Renovated through the 2021 bond package",
     "building": "Would be repurposed to house another district program.",
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "group": "Secondary group 1",
+    "group_students": 720,
+    "group_families": 653,
+    "welcoming": [],
+    "welcoming_note": "Students return to their home school or choose a school in the 2027-28 enrollment window."
    }
   },
   {
@@ -457,7 +567,12 @@
     "staffing": null,
     "bond": "Moved into the former Bryant Elementary in 2011, one of eight sites repurposed under Project Schoolhouse",
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "group": "Secondary group 1",
+    "group_students": 720,
+    "group_families": 653,
+    "welcoming": [],
+    "welcoming_note": "Students return to their home school or choose a school in the 2027-28 enrollment window."
    }
   },
   {
@@ -478,13 +593,17 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Central",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "feeder_proposed": "McLain",
+    "receives_from": [
+     "greenwood-leadership-academy"
+    ]
    }
   },
   {
@@ -505,13 +624,16 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Memorial",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "receives_from": [
+     "key-elementary"
+    ]
    }
   },
   {
@@ -532,13 +654,17 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "McLain",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "receives_from": [
+     "unity-learning-academy",
+     "springdale-elementary"
+    ]
    }
   },
   {
@@ -559,13 +685,16 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Webster",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "receives_from": [
+     "robertson-elementary"
+    ]
    }
   },
   {
@@ -586,7 +715,7 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Charter",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -613,7 +742,7 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Charter",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -640,13 +769,17 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "East Central",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "receives_from": [
+     "kerr-elementary",
+     "peary-elementary"
+    ]
    }
   },
   {
@@ -667,7 +800,7 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Edison",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -694,13 +827,17 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "East Central",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "receives_from": [
+     "dolores-huerta-elementary",
+     "peary-elementary"
+    ]
    }
   },
   {
@@ -721,7 +858,7 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Magnet",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -748,7 +885,7 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Edison",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -775,13 +912,14 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Central",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "feeder_proposed": "McLain"
    }
   },
   {
@@ -802,7 +940,7 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Webster",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -829,13 +967,17 @@
     "level": "Elementary",
     "status": "change",
     "number": null,
-    "feeder": null,
+    "feeder": "Magnet",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": "Would relocate to the Anderson Elementary building.",
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "receives_from": [
+     "springdale-elementary",
+     "sequoyah-elementary"
+    ]
    }
   },
   {
@@ -856,7 +998,7 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Memorial",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -883,13 +1025,18 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Hale",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "feeder_proposed": "East Central",
+    "receives_from": [
+     "unity-learning-academy",
+     "mitchell-elementary"
+    ]
    }
   },
   {
@@ -910,13 +1057,17 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "McLain",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "receives_from": [
+     "anderson-elementary",
+     "springdale-elementary"
+    ]
    }
   },
   {
@@ -937,7 +1088,7 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "McLain",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -964,13 +1115,16 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Hale",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "receives_from": [
+     "sequoyah-elementary"
+    ]
    }
   },
   {
@@ -991,7 +1145,7 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Edison",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1018,13 +1172,16 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "East Central",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "receives_from": [
+     "kerr-elementary"
+    ]
    }
   },
   {
@@ -1045,7 +1202,7 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Hale",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1072,13 +1229,17 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Hale",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "receives_from": [
+     "bell-elementary",
+     "hoover-elementary"
+    ]
    }
   },
   {
@@ -1099,7 +1260,7 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Magnet",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1126,13 +1287,16 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Memorial",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "receives_from": [
+     "marshall-elementary"
+    ]
    }
   },
   {
@@ -1153,13 +1317,17 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Hale",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "receives_from": [
+     "mitchell-elementary",
+     "bell-elementary"
+    ]
    }
   },
   {
@@ -1180,13 +1348,17 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Hale",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "feeder_proposed": "McLain",
+    "receives_from": [
+     "sequoyah-elementary"
+    ]
    }
   },
   {
@@ -1207,7 +1379,7 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Edison",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1234,13 +1406,18 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Memorial",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "feeder_proposed": "Hale",
+    "feeder_note": "north of 51st Street only",
+    "receives_from": [
+     "key-elementary"
+    ]
    }
   },
   {
@@ -1261,13 +1438,17 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Hale",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "receives_from": [
+     "dolores-huerta-elementary",
+     "hoover-elementary"
+    ]
    }
   },
   {
@@ -1288,7 +1469,7 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Charter",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1315,7 +1496,7 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Charter",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1342,13 +1523,17 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Central",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "feeder_proposed": "Webster",
+    "receives_from": [
+     "greenwood-leadership-academy"
+    ]
    }
   },
   {
@@ -1369,13 +1554,16 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "McLain",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "receives_from": [
+     "anderson-elementary"
+    ]
    }
   },
   {
@@ -1396,7 +1584,7 @@
     "level": "Elementary",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Magnet",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1423,7 +1611,7 @@
     "level": "Middle",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Magnet",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1450,7 +1638,7 @@
     "level": "Middle",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "East Central",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1477,7 +1665,7 @@
     "level": "Middle",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Edison",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1504,7 +1692,7 @@
     "level": "Middle",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Hale",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1531,7 +1719,7 @@
     "level": "Middle",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Charter",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1558,7 +1746,7 @@
     "level": "Middle",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Memorial",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1585,13 +1773,16 @@
     "level": "Middle",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "McLain",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "receives_from": [
+     "central-middle-school"
+    ]
    }
   },
   {
@@ -1612,7 +1803,7 @@
     "level": "Middle",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Magnet",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1639,7 +1830,7 @@
     "level": "Middle",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Charter",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1666,7 +1857,7 @@
     "level": "Middle",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Charter",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1693,7 +1884,7 @@
     "level": "Middle",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Charter",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1720,7 +1911,7 @@
     "level": "Middle",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Charter",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1747,13 +1938,16 @@
     "level": "Middle",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Webster",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": null,
-    "coord_source": "US Census Geocoder, Public_AR_Current"
+    "coord_source": "US Census Geocoder, Public_AR_Current",
+    "receives_from": [
+     "central-middle-school"
+    ]
    }
   },
   {
@@ -1774,7 +1968,7 @@
     "level": "High",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Magnet",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1801,13 +1995,15 @@
     "level": "High",
     "status": "change",
     "number": null,
-    "feeder": null,
+    "feeder": "Central",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
     "bond": null,
     "building": "Would stop being a neighborhood school and become the hub for the district’s secondary alternative programs and Tulsa Virtual Academy.",
-    "coord_source": "Wikipedia infobox (no Census address range for this block)"
+    "coord_source": "Wikipedia infobox (no Census address range for this block)",
+    "feeder_proposed": "Alternative",
+    "feeder_note": "becomes the Alternative High School Hub"
    }
   },
   {
@@ -1828,7 +2024,7 @@
     "level": "High",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "East Central",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1855,7 +2051,7 @@
     "level": "High",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Edison",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1882,7 +2078,7 @@
     "level": "High",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Hale",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1909,7 +2105,7 @@
     "level": "High",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Charter",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1936,7 +2132,7 @@
     "level": "High",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "McLain",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1963,7 +2159,7 @@
     "level": "High",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Memorial",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -1990,7 +2186,7 @@
     "level": "High",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Magnet",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -2017,7 +2213,7 @@
     "level": "High",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Charter",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -2044,7 +2240,7 @@
     "level": "High",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Charter",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -2071,7 +2267,7 @@
     "level": "High",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Webster",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -2098,7 +2294,7 @@
     "level": "Alternative / other",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Alternative",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -2125,7 +2321,7 @@
     "level": "Alternative / other",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Alternative",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -2152,7 +2348,7 @@
     "level": "Alternative / other",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Alternative",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -2179,7 +2375,7 @@
     "level": "Alternative / other",
     "status": "change",
     "number": null,
-    "feeder": null,
+    "feeder": "Alternative",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -2206,7 +2402,7 @@
     "level": "Alternative / other",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Alternative",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -2233,7 +2429,7 @@
     "level": "Alternative / other",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Alternative",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -2260,7 +2456,7 @@
     "level": "Alternative / other",
     "status": "open",
     "number": null,
-    "feeder": null,
+    "feeder": "Alternative",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,
@@ -2287,7 +2483,7 @@
     "level": "Alternative / other",
     "status": "change",
     "number": null,
-    "feeder": null,
+    "feeder": "Alternative",
     "enrollment": null,
     "occupancy": null,
     "staffing": null,

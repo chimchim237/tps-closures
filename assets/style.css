@@ -94,6 +94,8 @@ header.mast{border-bottom:1px solid var(--rule);background:var(--paper)}
   font:700 11px/1 "Archivo",sans-serif;font-variant-numeric:tabular-nums;cursor:pointer;user-select:none}
 .pin:hover{transform:scale(1.08)}
 .pin.on,.pin:focus-visible{outline:none;box-shadow:0 0 0 2.5px var(--ink)}
+.pin.dim{opacity:.18!important;pointer-events:none}   /* !important: MapLibre sets an inline opacity on markers */
+.pin.welcome{box-shadow:0 0 0 2.5px var(--site)}
 
 /* hover tooltip and click card, rendered as MapLibre popups */
 .maplibregl-popup-content{background:var(--panel);color:var(--ink);border:1px solid var(--rule);border-radius:4px;
@@ -132,6 +134,24 @@ header.mast{border-bottom:1px solid var(--rule);background:var(--paper)}
 .side{display:flex;flex-direction:column;gap:16px}
 .card{background:var(--panel);border:1px solid var(--rule);border-radius:3px;padding:13px 14px}
 .card h2{font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:10.5px;color:var(--ink-3);margin:0 0 9px;font-weight:700}
+/* collapsible cards */
+.fold>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;margin:-13px -14px;padding:13px 14px;border-radius:3px}
+.fold>summary::-webkit-details-marker{display:none}
+.fold>summary::before{content:"";width:0;height:0;border:4.5px solid transparent;border-left:6px solid var(--ink-3);margin-left:2px;transition:transform .15s;flex:none}
+.fold[open]>summary::before{transform:rotate(90deg)}
+.fold>summary h2{margin:0}
+.fold>summary:hover{background:var(--paper-2)}
+.fold>summary:focus-visible{outline:2px solid var(--signal);outline-offset:-2px}
+.fold[open]>summary{margin-bottom:0}
+.fold>summary+*{margin-top:9px}
+/* highlight select */
+.sel-l{display:block;font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;letter-spacing:.09em;font-size:10px;color:var(--ink-3);font-weight:700;margin:12px 0 5px}
+.sel{width:100%;font:13px "Archivo",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--rule);border-radius:3px;padding:6px 8px}
+.sel:focus-visible{outline:2px solid var(--signal);outline-offset:-1px}
+.hl-note{margin-top:8px}
+.hl-note:empty{display:none}
+.roll .nums{font-family:"Archivo Narrow",sans-serif;font-size:11px;color:var(--signal);font-weight:700;margin-left:4px}
+#grouproll li.it.on,#feedroll li.it.on{box-shadow:inset 2px 0 0 var(--ink)}
 .seg{display:flex;border:1px solid var(--rule);border-radius:3px;overflow:hidden;margin-bottom:9px;position:relative}
 .seg label{flex:1;text-align:center;font-size:12px;padding:5px 4px;cursor:pointer;color:var(--ink-2);background:var(--panel)}
 .seg input{position:absolute;opacity:0;width:0;height:0}

@@ -24,9 +24,13 @@ Contributors will most often want to edit the data, not the code.
 
 | File | What it holds | Source |
 |---|---|---|
-| `data/schools.geojson` | All 85 campuses: name, address, ZIP, tract GEOID, level, status (`closure` / `change` / `open`), closure number, and the per-site rows shown on cards (feeder, enrollment, occupancy, staffing, bond, building) | Slide 27 of the board presentation; TPS *Directory of Schools 2026–27*; U.S. Census Geocoder; Tulsa World, 21 Sep 2026 |
+| `data/schools.geojson` | All 85 campuses: name, address, ZIP, tract GEOID, level, status (`closure` / `change` / `open`), closure number, feeder pattern (`feeder`, plus `feeder_proposed` / `feeder_note` where the proposal moves a school), consolidation group (`group`, `group_students`, `group_families`), welcoming sites (`welcoming`, `welcoming_note`, and the reverse `receives_from`), and the per-site rows shown on cards (enrollment, occupancy, staffing, bond, building) | Slides 27–46 of the board presentation; TPS *Our Schools* pages (feeder headings); TPS *Directory of Schools 2026–27*; U.S. Census Geocoder; Tulsa World, 21 Sep 2026 |
 | `data/tracts.geojson` | 208 Tulsa County tracts + 5 Osage County tracts that reach into west Tulsa: median household income, margin of error, population, poverty rate, reliability flag | ACS 2024 5-year, tables B19013 / B01003 / B17020 via the Census API; Census cartographic boundaries (500k, 2022) |
 | `data/zips.geojson` | 38 ZIP Code Tabulation Areas: median household income, MOE, population, reliability flag | ACS 2024 5-year as republished by IncomeByZipCode.com; 2010 ZCTA boundaries |
+
+`tools/add_feeders_groups.py` holds the feeder membership, group and welcoming-site tables
+in one place and rewrites those properties; edit it and rerun rather than editing 85 features.
+The feeder building-use figures (slide 46) live in `FEEDERS` at the top of `assets/app.js`.
 
 To add or correct a card row, edit the feature's properties in `schools.geojson`. Empty rows
 are simply omitted from the card. To add a school, add a Point feature with at least `id`,
@@ -55,6 +59,10 @@ Notes on the data:
   street and place names render above the shading;
 - draws remaining sites and building-change sites as circle layers, and the 17 numbered
   closure pins as DOM markers (keyboard-reachable, no glyph dependency);
+- on selection, draws dashed links from a closing site to its welcoming sites (or into a
+  welcoming site from the closures it takes) and rings the welcoming sites;
+- the "Highlight" select, and the group / feeder rows in the sidebar, fade every school outside
+  the chosen consolidation group or feeder pattern (feature-state `dim`; faded sites are inert);
 - reads every color from the CSS tokens in `assets/style.css`, so restyling the page restyles
   the map.
 
@@ -78,7 +86,7 @@ private repository never needs to reference this one.
 
 `tests/test_map.py` drives the real page in headless Chromium with Playwright and exercises
 hover, click, keyboard, every toggle, the tract/ZIP switch, zoom and pan, phone width and
-dark mode — 75 checks. It runs offline against `?style=blank`.
+dark mode, welcoming links and group / feeder highlights — 101 checks. It runs offline against `?style=blank`.
 
 ```sh
 pip install playwright && playwright install chromium
@@ -87,8 +95,9 @@ python3 tests/test_map.py
 
 ## Sources
 
-- Tulsa Public Schools, *Superintendent's Proposal to Address Budget Deficit*, board presentation, 21 September 2026 (slide 27).
+- Tulsa Public Schools, *Superintendent's Proposal to Address Budget Deficit*, board presentation, 21 September 2026 (slide 27; slides 7–49 for groups, welcoming sites, headcounts, feeder shifts, building use, criteria and budget figures).
 - Tulsa Public Schools, *Directory of Schools 2026–2027* (addresses).
+- Tulsa Public Schools, *Our Schools* pages, tulsaschools.org/enrollment/our-schools, feeder-pattern headings, read 22 September 2026 (feeder membership for all 85 sites).
 - U.S. Census Bureau Geocoder, `Public_AR_Current` benchmark (coordinates).
 - U.S. Census Bureau, American Community Survey 2024 5-year estimates, tables B19013, B01003, B17020, via `api.census.gov` (tract income, population, poverty).
 - U.S. Census Bureau, cartographic boundary files, 500k, 2022 vintage, via the Bureau's `citysdk` repository (tract boundaries).

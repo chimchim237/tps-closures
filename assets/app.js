@@ -45,8 +45,31 @@ const changes = S.filter((s) => s.status === 'change');
 const opens = S.filter((s) => s.status === 'open');
 const tractBy = Object.fromEntries(tracts.features.map((f) => [f.properties.geoid, f.properties]));
 const zipBy = Object.fromEntries(zips.features.map((f) => [f.properties.zip, f.properties]));
+const byId = Object.fromEntries(S.map((s) => [s.id, s]));
 // a marker that covers another school at the identical address names it on its card
 for (const s of [...closures, ...changes]) s.colocated = opens.filter((o) => o.address === s.address).map((o) => o.name);
+
+// consolidation groups (slides 28-42) and feeder patterns (slides 45-46) of the 21 Sep 2026 proposal
+const GROUPS = [...new Set(closures.map((s) => s.group))].map((g) => {
+  const members = closures.filter((s) => s.group === g);
+  return { key: g, members, students: members[0].group_students, families: members[0].group_families,
+    welcoming: [...new Set(members.flatMap((s) => s.welcoming || []))] };
+}).sort((a, b) => a.key.localeCompare(b.key));
+// building use by feeder, current -> proposed, from slide 46 (students / seats)
+const FEEDERS = [
+  { key: 'Hale',         now: [5539, 9469], then: [5295, 6825] },
+  { key: 'Central',      now: [1678, 3216], then: [1038, 986], note: 'Central becomes the Alternative High School Hub; about 70% of its proposed students are in virtual programs.' },
+  { key: 'East Central', now: [4180, 7077], then: [4540, 5509] },
+  { key: 'McLain',       now: [3843, 7045], then: [4601, 6121] },
+  { key: 'Edison',       now: [3741, 4259], then: [3810, 4259] },
+  { key: 'Memorial',     now: [3446, 5595], then: [3395, 4365] },
+  { key: 'Webster',      now: [1541, 2649], then: [2147, 2781] },
+  { key: 'Magnet',       now: [5690, 6466], then: [5581, 6038] },
+  { key: 'Alternative' },
+  { key: 'Charter' },
+];
+for (const f of FEEDERS) f.members = S.filter((s) => s.feeder === f.key);
+const pct = (a) => (100 * a[0] / a[1]).toFixed(1) + '%';
 
 const bounds = S.reduce(
   (b, s) => [[Math.min(b[0][0], s.lon), Math.min(b[0][1], s.lat)], [Math.max(b[1][0], s.lon), Math.max(b[1][1], s.lat)]],
@@ -68,7 +91,10 @@ map.addControl(new maplibregl.ScaleControl({ unit: 'imperial', maxWidth: 120 }),
 window.__map = map;     // exposed for the test harness only
 window.__data = { schools, tracts, zips };
 
-const state = { unit: 'tract', income: true, chg: true, open: true, ziplab: true, sel: null };
+const state = { unit: 'tract', income: true, chg: true, open: true, ziplab: true, sel: null, hl: null };
+// hl: null (everything) or { kind: 'group' | 'feeder', key } — schools outside the highlight fade
+const DIM = 0.18;
+const fs = (name, ifTrue, ifFalse) => ['case', ['boolean', ['feature-state', name], false], ifTrue, ifFalse];
 const tip = new maplibregl.Popup({ closeButton: false, closeOnClick: false, className: 'tip', offset: 12, maxWidth: 'none' });
 let card = null;
 const phone = () => window.innerWidth < 600;
@@ -119,17 +145,27 @@ function addLayers() {
       'text-allow-overlap': false, 'text-padding': 6, visibility: state.ziplab ? 'visible' : 'none' },
     paint: { 'text-color': ink, 'text-opacity': 0.62, 'text-halo-color': halo, 'text-halo-width': 1.4 } });
 
+  // closing site -> welcoming sites, filled when a school is selected
+  map.addSource('links', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+  map.addLayer({ id: 'link-line', type: 'line', source: 'links',
+    layout: { 'line-cap': 'round' },
+    paint: { 'line-color': token('--signal'), 'line-width': 2.2, 'line-dasharray': [1.5, 2], 'line-opacity': 0.9 } });
+
+  const dimOp = fs('dim', DIM, 1);
   map.addLayer({ id: 'open-dot', type: 'circle', source: 'schools', filter: ['==', ['get', 'status'], 'open'],
     layout: { visibility: state.open ? 'visible' : 'none' },
     paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 9, 5, 12, 7, 15, 9], 'circle-color': token('--site'),
-      'circle-stroke-color': ink,
-      'circle-stroke-width': ['case', ['boolean', ['feature-state', 'sel'], false], 2.5, 0] } });
+      'circle-opacity': dimOp, 'circle-stroke-opacity': dimOp,
+      'circle-stroke-color': fs('sel', ink, token('--signal')),
+      'circle-stroke-width': fs('sel', 2.5, fs('welcome', 2.5, 0)) } });
   map.addLayer({ id: 'chg-dot', type: 'circle', source: 'schools', filter: ['==', ['get', 'status'], 'change'],
     layout: { visibility: state.chg ? 'visible' : 'none' },
     paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 9, 6.5, 12, 8.6, 15, 11], 'circle-color': '#ffffff',
-      'circle-stroke-color': ['case', ['boolean', ['feature-state', 'sel'], false], ink, token('--site')],
-      'circle-stroke-width': ['case', ['boolean', ['feature-state', 'sel'], false], 4, 3.5] } });
+      'circle-opacity': dimOp, 'circle-stroke-opacity': dimOp,
+      'circle-stroke-color': fs('sel', ink, fs('welcome', token('--signal'), token('--site'))),
+      'circle-stroke-width': fs('sel', 4, 3.5) } });
 
+  applyHighlight();
   applySelection();
 }
 map.on('style.load', addLayers);
@@ -139,7 +175,7 @@ for (const s of closures) {
   const el = document.createElement('button');
   el.className = 'pin'; el.type = 'button'; el.textContent = s.number;
   el.setAttribute('aria-label', `${s.name}, ${s.address}, proposed for closure`);
-  el.addEventListener('click', (e) => { e.stopPropagation(); openCard(s); });
+  el.addEventListener('click', (e) => { e.stopPropagation(); if (inHighlight(s)) openCard(s); });   // faded pins are inert
   el.addEventListener('mouseenter', () => { if (state.sel !== s) showTip([s.lon, s.lat], schoolTip(s)); });
   el.addEventListener('mouseleave', () => tip.remove());
   s.marker = new maplibregl.Marker({ element: el, anchor: 'center' }).setLngLat([s.lon, s.lat]).addTo(map);
@@ -163,7 +199,8 @@ function areaTip(p, unit) {
 const DOT_LAYERS = ['chg-dot', 'open-dot'];
 function dotAt(point) {
   const hits = map.queryRenderedFeatures(point, { layers: DOT_LAYERS.filter((l) => map.getLayer(l)) });
-  return hits.length ? S.find((x) => x.id === hits[0].properties.id) : null;
+  const s = hits.length ? S.find((x) => x.id === hits[0].properties.id) : null;
+  return s && inHighlight(s) ? s : null;      // faded dots are inert
 }
 
 map.on('mousemove', (e) => {
@@ -201,22 +238,94 @@ function cardHTML(s) {
     ? `<span class="pop-lv">Proposed for closure &middot; ${s.level === 'Elementary' ? 'Elementary site' : 'Secondary site'}</span>`
     : s.status === 'change' ? `<span class="pop-lv alt">Stays open &middot; building change</span>`
     : `<span class="pop-lv alt">Remaining district site${s.level ? ' &middot; ' + s.level : ''}</span>`;
+  const names = (ids) => ids.map((id) => `<b>${byId[id].name}</b>`).join(', ');
+  const feeder = s.feeder_proposed
+    ? `${s.feeder} &rarr; <b>${s.feeder_proposed}</b> under the proposal${s.feeder_note ? ' (' + s.feeder_note + ')' : ''}`
+    : s.feeder;
+  const group = s.group
+    ? `${s.group}${s.group.startsWith('Secondary') ? ' (secondary groups 1 and 2 together)' : ''}<br>` +
+      `${s.group_students.toLocaleString('en-US')} students, ${s.group_families.toLocaleString('en-US')} families affected` : '';
+  const goto = s.welcoming && s.welcoming.length ? names(s.welcoming) : s.welcoming_note;
+  const from = s.receives_from ? 'Students from ' + names(s.receives_from) : '';
   return `<div class="pop-hd">${head}<div class="pop-t"><h3>${s.name}</h3>${kicker}</div>` +
     `<button class="pop-x" type="button" aria-label="Close">&times;</button></div><dl>` +
     row('Address', `${s.address}<br>Tulsa, OK ${s.zip}`) +
     row('ZIP ' + s.zip, zinc) + (t ? row('Tract ' + t.tract, tinc) : '') +
-    row('Feeder', s.feeder) + row('Enrollment', s.enrollment) + row('Occupancy', s.occupancy) +
+    row('Feeder', feeder) + row('Group', group) + row('Students go to', goto) + row('Would receive', from) +
+    row('Enrollment', s.enrollment) + row('Occupancy', s.occupancy) +
     row('Staffing', s.staffing) + row('Bond', s.bond) +
     (s.colocated && s.colocated.length ? row('Campus', 'Shared with <b>' + s.colocated.join(', ') + '</b>') : '') +
     row('Building', s.building) + '</dl>';
+}
+
+// dashed lines from a closing site to its welcoming sites (or into a welcoming site from the closures it takes)
+function linksFor(s) {
+  if (!s) return [];
+  const pairs = s.welcoming && s.welcoming.length ? s.welcoming.map((w) => [s, byId[w]])
+    : s.receives_from ? s.receives_from.map((c) => [byId[c], s]) : [];
+  return pairs.map(([a, b]) => ({ type: 'Feature', properties: {},
+    geometry: { type: 'LineString', coordinates: [[a.lon, a.lat], [b.lon, b.lat]] } }));
+}
+function welcomeIds(s) {
+  if (!s) return new Set();
+  return new Set(s.welcoming && s.welcoming.length ? s.welcoming : s.receives_from || []);
 }
 
 function applySelection() {
   const s = state.sel;
   if (map.getLayer('tract-sel')) map.setFilter('tract-sel', ['==', ['get', 'geoid'], s ? s.tract_geoid : '__none__']);
   if (map.getLayer('zip-sel')) map.setFilter('zip-sel', ['==', ['get', 'zip'], s ? s.zip : '__none__']);
+  const links = linksFor(s);
+  if (map.getSource('links')) map.getSource('links').setData({ type: 'FeatureCollection', features: links });
+  window.__links = links;   // test harness
+  const welcome = welcomeIds(s);
   if (map.getSource('schools'))
-    for (const c of [...changes, ...opens]) map.setFeatureState({ source: 'schools', id: c.id }, { sel: c === s });
+    for (const c of S) map.setFeatureState({ source: 'schools', id: c.id }, { sel: c === s, welcome: welcome.has(c.id) });
+  for (const c of closures) if (c.el) c.el.classList.toggle('welcome', welcome.has(c.id));
+}
+
+// ---------------------------------------------------------------- highlight (group / feeder)
+function inHighlight(s) {
+  const h = state.hl;
+  if (!h) return true;
+  if (h.kind === 'feeder') return s.feeder === h.key || s.feeder_proposed === h.key;
+  const g = GROUPS.find((x) => x.key === h.key);
+  return g.members.includes(s) || g.welcoming.includes(s.id);
+}
+function applyHighlight() {
+  if (map.getSource('schools'))
+    for (const s of S) map.setFeatureState({ source: 'schools', id: s.id }, { dim: !inHighlight(s) });
+  for (const s of closures) if (s.el) s.el.classList.toggle('dim', !inHighlight(s));
+  for (const li of document.querySelectorAll('#grouproll li.it, #feedroll li.it'))
+    li.classList.toggle('on', !!state.hl && li.dataset.kind === state.hl.kind && li.dataset.key === state.hl.key);
+  const sel = $('hl');
+  const v = state.hl ? state.hl.kind + ':' + state.hl.key : '';
+  if (sel.value !== v) sel.value = v;
+  $('hl-note').innerHTML = highlightNote();
+}
+function highlightNote() {
+  const h = state.hl;
+  if (!h) return '';
+  if (h.kind === 'group') {
+    const g = GROUPS.find((x) => x.key === h.key);
+    return `<b>${g.members.map((s) => s.name).join(', ')}</b> close; students go to ` +
+      (g.welcoming.length ? g.welcoming.map((id) => byId[id].name).join(', ') : 'their home schools') +
+      `. ${g.students.toLocaleString('en-US')} students and ${g.families.toLocaleString('en-US')} families affected` +
+      (g.key.startsWith('Secondary') ? ' across both secondary groups' : '') + '.';
+  }
+  const f = FEEDERS.find((x) => x.key === h.key);
+  const closing = f.members.filter((s) => s.status === 'closure').map((s) => s.name);
+  const use = f.now ? `Building use ${pct(f.now)} (${f.now[0].toLocaleString('en-US')} of ${f.now[1].toLocaleString('en-US')} seats) now, ` +
+    `${pct(f.then)} under the proposal.` : '';
+  const shifts = S.filter((s) => s.feeder_proposed === f.key).map((s) => s.name);
+  return `${f.members.length} sites. ` + (closing.length ? `Closing: <b>${closing.join(', ')}</b>. ` : '') + use +
+    (shifts.length ? ` Joining from other feeders: ${shifts.join(', ')}.` : '') + (f.note ? ' ' + f.note : '');
+}
+function setHighlight(kind, key) {
+  state.hl = kind ? { kind, key } : null;
+  if (state.sel && !inHighlight(state.sel)) clearSel();
+  applyHighlight();
+  tip.remove();
 }
 function openCard(s) {
   if (state.sel && state.sel !== s) unmark(state.sel);
@@ -266,6 +375,37 @@ for (const s of closures) {
   roll.appendChild(rollRow(s, `<span class="n">${s.number}</span>`));
 }
 for (const s of changes) $('chgroll').appendChild(rollRow(s, '<span class="n sq">&#9633;</span>'));
+
+// group and feeder rows: click to highlight that set on the map (click again to clear)
+function hlRow(kind, key, title, sub) {
+  const li = document.createElement('li');
+  li.className = 'it hl'; li.tabIndex = 0; li.dataset.kind = kind; li.dataset.key = key;
+  li.innerHTML = `<span class="nm">${title}<span class="ad">${sub}</span></span>`;
+  const go = () => setHighlight(...(state.hl && state.hl.kind === kind && state.hl.key === key ? [null] : [kind, key]));
+  li.addEventListener('click', go);
+  li.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+  return li;
+}
+for (const g of GROUPS) {
+  const nums = g.members.map((s) => s.number).join(', ');
+  $('grouproll').appendChild(hlRow('group', g.key, `${g.key} <span class="nums">#${nums}</span>`,
+    `${g.members.map((s) => s.name.replace(/ Elementary$/, '')).join(', ')} &middot; ${g.students.toLocaleString('en-US')} students` +
+    (g.key.startsWith('Secondary') ? ' (both secondary groups)' : '')));
+}
+for (const f of FEEDERS) {
+  const n = f.members.filter((s) => s.status === 'closure').length;
+  const sub = (f.now ? `${pct(f.now)} &rarr; ${pct(f.then)} building use` : `${f.members.length} sites`) +
+    (n ? ` &middot; ${n} closing` : '');
+  $('feedroll').appendChild(hlRow('feeder', f.key, f.key, sub));
+}
+const hlSel = $('hl');
+for (const g of GROUPS) hlSel.querySelector('optgroup[label="Consolidation groups"]').append(new Option(g.key, 'group:' + g.key));
+for (const f of FEEDERS) hlSel.querySelector('optgroup[label="Feeder patterns"]').append(new Option(f.key, 'feeder:' + f.key));
+hlSel.addEventListener('change', () => { const [k, ...r] = hlSel.value.split(':'); setHighlight(k || null, r.join(':')); });
+
+// header count: students the district says are affected (group totals; secondary groups reported once)
+$('n-students').textContent = GROUPS.filter((g) => !g.key.startsWith('Secondary') || g.key.endsWith('1'))
+  .reduce((n, g) => n + g.students, 0).toLocaleString('en-US');
 
 // ---------------------------------------------------------------- controls
 function setVis(id, on) { if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none'); }

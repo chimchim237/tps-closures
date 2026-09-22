@@ -156,6 +156,9 @@ def main():
         pg.keyboard.press("Escape")
 
         print("\n--- building-change sites ---")
+        pg.evaluate("()=>{const d=document.querySelector('#chgroll').closest('details'); d.open=false;}")
+        pg.click("details.fold:has(#chgroll) summary"); pg.wait_for_timeout(150)
+        check("clicking a folded card's title opens it", pg.evaluate("()=>document.querySelector('#chgroll').closest('details').open"))
         badch = []
         for i in range(4):
             pg.keyboard.press("Escape"); pg.wait_for_timeout(60)
@@ -198,6 +201,77 @@ def main():
         check("hiding remaining sites closes a remaining site's card", pg.eval_on_selector_all(".pop", "e=>e.length") == 0)
         pg.check("#t-open"); pg.wait_for_timeout(150)
         pg.keyboard.press("Escape")
+
+        print("\n--- welcoming sites and groups (deck slides 28-42) ---")
+        pg.click("#zrst"); pg.wait_for_timeout(700)
+        pg.evaluate("(nm)=>{[...document.querySelectorAll('.pin')].find(p=>p.getAttribute('aria-label').startsWith(nm)).click();}", "Key Elementary")
+        pg.wait_for_timeout(250)
+        body = pg.eval_on_selector_all(".pop", "e=>e.map(x=>x.innerText).join('')").upper()
+        check("Key's card names its welcoming sites", "STUDENTS GO TO" in body and "SALK" in body and "CARNEGIE" in body, body[:120])
+        check("Key's card carries its group and headcount", "ELEMENTARY GROUP 4" in body and "538 STUDENTS" in body and "443 FAMILIES" in body)
+        check("Key's card shows its feeder", "MEMORIAL" in body)
+        n_links = pg.evaluate("()=>window.__links.length")
+        check("two dashed links drawn from Key to Salk and Carnegie", n_links == 2, n_links)
+        welcome = pg.evaluate("()=>['salk-elementary','carnegie-elementary','mcclure-elementary'].map(id=>!!window.__map.getFeatureState({source:'schools',id}).welcome)")
+        check("Salk and Carnegie ringed as welcoming, McClure not", welcome == [True, True, False], welcome)
+        pg.keyboard.press("Escape"); pg.wait_for_timeout(150)
+        check("Escape clears the links", pg.evaluate("()=>window.__links.length") == 0)
+        # a welcoming site's card shows the reverse
+        pt = click_layer_feature("open-dot", "name", "Salk Elementary")
+        pg.mouse.click(pt[0], pt[1]); pg.wait_for_timeout(250)
+        body = pg.eval_on_selector_all(".pop", "e=>e.map(x=>x.innerText).join('')").upper()
+        check("Salk's card says it would receive Key's students", "WOULD RECEIVE" in body and "KEY ELEMENTARY" in body, body[:120])
+        check("Salk's card shows its proposed feeder shift", "MEMORIAL" in body and "HALE" in body and "51ST" in body, body[:160])
+        check("one link drawn into Salk from Key", pg.evaluate("()=>window.__links.length") == 1)
+        pg.keyboard.press("Escape")
+        # secondary sites have no welcoming site
+        pg.evaluate("(nm)=>{[...document.querySelectorAll('.pin')].find(p=>p.getAttribute('aria-label').startsWith(nm)).click();}", "Thoreau")
+        pg.wait_for_timeout(250)
+        body = pg.eval_on_selector_all(".pop", "e=>e.map(x=>x.innerText).join('')").upper()
+        check("Thoreau's card explains students return to home schools", "HOME SCHOOL" in body, body[:160])
+        pg.keyboard.press("Escape")
+        # sidebar group list
+        pg.evaluate("()=>document.querySelector('#grouproll').closest('details').open=true")
+        check("eight consolidation groups listed", pg.eval_on_selector_all("#grouproll li.it", "e=>e.length") == 8)
+
+        print("\n--- highlight a group / a feeder pattern ---")
+        def dim(id_):
+            return pg.evaluate("(id)=>!!window.__map.getFeatureState({source:'schools',id}).dim", id_)
+        pg.select_option("#hl", "group:Elementary group 4"); pg.wait_for_timeout(200)
+        check("group highlight keeps Key, Salk, Carnegie, McClure, Marshall at full strength",
+              not any(dim(i) for i in ["salk-elementary", "carnegie-elementary", "mcclure-elementary"]) and
+              not pg.evaluate("()=>[...document.querySelectorAll('.pin')].filter(p=>/^(Key|Marshall)/.test(p.getAttribute('aria-label'))).some(p=>p.classList.contains('dim'))"))
+        check("…and fades the rest", dim("skelly-elementary") and dim("central-high-school") and
+              pg.evaluate("()=>[...document.querySelectorAll('.pin')].find(p=>p.getAttribute('aria-label').startsWith('Anderson')).classList.contains('dim')"))
+        check("group row in the sidebar is marked active", pg.eval_on_selector_all("#grouproll li.it.on", "e=>e.length") == 1)
+        note = pg.inner_text("#hl-note").upper()
+        check("highlight note names the group's schools and headcount", "KEY" in note and "MARSHALL" in note and "538" in note, note[:120])
+        pg.select_option("#hl", "feeder:Hale"); pg.wait_for_timeout(200)
+        check("feeder highlight keeps Hale's schools", not dim("skelly-elementary") and not dim("nathan-hale-high-school") and
+              not pg.evaluate("()=>[...document.querySelectorAll('.pin')].find(p=>p.getAttribute('aria-label').startsWith('Bell')).classList.contains('dim')"))
+        check("feeder highlight includes a school moving in (Salk, proposed Hale)", not dim("salk-elementary"))
+        check("feeder highlight fades other feeders", dim("carnegie-elementary") and dim("mclain-high-school"))
+        pg.wait_for_timeout(400)   # MapLibre transitions marker opacity over 0.2s
+        ops = pg.evaluate("()=>[...document.querySelectorAll('.pin')].map(p=>[p.textContent, +getComputedStyle(p).opacity])")
+        check("faded pins actually render faded (MapLibre's inline marker opacity is overridden)",
+              all((o < 0.3) != (n in ("2", "5")) for n, o in ops), ops)
+        note = pg.inner_text("#hl-note")
+        check("feeder note carries building use now and proposed", "58.5%" in note and "77.6%" in note, note[:160])
+        # clicking a faded pin must not open a card
+        pg.evaluate("()=>[...document.querySelectorAll('.pin')].find(p=>p.getAttribute('aria-label').startsWith('Anderson')).click()")
+        pg.wait_for_timeout(200)
+        check("a faded pin does not respond to clicks", pg.eval_on_selector_all(".pop", "e=>e.length") == 0)
+        # clicking the active feeder row clears the highlight
+        pg.evaluate("()=>document.querySelector('#feedroll').closest('details').open=true")
+        pg.click("#feedroll li.it.on"); pg.wait_for_timeout(200)
+        check("clicking the active row clears the highlight", pg.evaluate("()=>document.getElementById('hl').value") == "" and not dim("carnegie-elementary"))
+        pg.evaluate("()=>[...document.querySelectorAll('.pin')].find(p=>p.getAttribute('aria-label').startsWith('Anderson')).click()")
+        pg.wait_for_timeout(200)
+        check("pins respond again after clearing", pg.eval_on_selector_all(".pop", "e=>e.length") == 1)
+        pg.select_option("#hl", "group:Elementary group 6"); pg.wait_for_timeout(200)
+        check("highlighting a group the selected school is outside closes its card", pg.eval_on_selector_all(".pop", "e=>e.length") == 0)
+        pg.select_option("#hl", ""); pg.wait_for_timeout(150)
+        check("header counts 4,726 students affected", pg.inner_text("#n-students") == "4,726", pg.inner_text("#n-students"))
 
         print("\n--- sidebar row → flyTo ---")
         z0 = zoom()
