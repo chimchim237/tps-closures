@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proposed TPS School Closures</title>
+<meta name="description" content="The 17 Tulsa Public Schools campuses proposed for closure in September 2026, with four building changes, mapped against median household income by census tract or ZIP code, with enrollment, occupancy, feeder pattern and staffing detail per site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=Archivo:wght@400;500;600;700&family=Zilla+Slab:wght@500;600;700&display=swap">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="vendor/maplibre-gl/maplibre-gl.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap mast-in">
+    <div>
+      <h1>Proposed TPS School <em>Closures</em></h1>
+      <p class="dek">Tulsa Public Schools campuses named for closure in the administration's
+      consolidation recommendation, plotted against median household income by census tract
+      or by ZIP code. Every remaining district site is shown for contrast.</p>
+    </div>
+    <div class="stamp">
+      <div class="hot"><b>17</b>proposed closures</div>
+      <div><b>68</b>sites remaining</div>
+      <div><b>$12M</b>cuts sought</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap grid">
+  <div class="plate">
+    <div id="map" role="region" aria-label="Map of Tulsa census tracts shaded by median household income, with 17 proposed school closures marked"></div>
+    <button id="zrst" class="fit" type="button" title="Reset view">Fit</button>
+  </div>
+
+  <aside class="side">
+    <div class="card">
+      <h2>Median household income</h2>
+      <div class="ramp">
+        <i style="background:var(--c0)"></i><i style="background:var(--c1)"></i><i style="background:var(--c2)"></i>
+        <i style="background:var(--c3)"></i><i style="background:var(--c4)"></i>
+        <i style="background:var(--c5)"></i><i style="background:var(--c6)"></i>
+      </div>
+      <div class="ramp-ax"><span>&lt;$35k</span><span>$65k</span><span>$95k+</span></div>
+      <p class="ramp-note">ACS 2024 five-year estimates, by census tract (Tulsa County plus the
+      Osage County tracts inside west Tulsa) or by ZIP code. A dashed outline flags a small
+      population or a wide margin of error. ZIP 74117 has no published median.</p>
+      <div class="keys">
+        <div class="key">
+          <svg width="19" height="19" aria-hidden="true"><circle cx="9.5" cy="9.5" r="7.5" fill="var(--halo)"/><circle cx="9.5" cy="9.5" r="6" fill="var(--signal)"/></svg>
+          Proposed for closure &mdash; click a number
+        </div>
+        <div class="key">
+          <svg width="19" height="19" aria-hidden="true"><circle cx="9.5" cy="9.5" r="6" fill="#fff" stroke="var(--site)" stroke-width="3.5"/></svg>
+          Other building change &mdash; click it
+        </div>
+        <div class="key">
+          <svg width="19" height="19" aria-hidden="true"><circle cx="9.5" cy="9.5" r="6.5" fill="var(--site)"/></svg>
+          Remaining district site &mdash; hover for name
+        </div>
+      </div>
+      <p class="ramp-note crit">Every site in the proposal enrolled <b>fewer than 400 students</b>
+      with <b>building use under 65%</b>, and none is projected to gain enrollment. The 14
+      elementary sites averaged <b>307 students</b> and <b>51.3% occupancy</b> in 2025&ndash;26;
+      only Anderson and Dolores Huerta cleared 60%.</p>
+      <p class="ramp-note">The list touches all seven school board districts and six of seven
+      feeder patterns. Edison is the exception: every Edison school sat at 75% occupancy or
+      above, two of them above 95%.</p>
+    </div>
+
+    <div class="card">
+      <h2>Layers</h2>
+      <div class="seg" role="radiogroup" aria-label="Shade income by">
+        <label><input type="radio" name="unit" id="u-tract" value="tract" checked><span>By census tract</span></label>
+        <label><input type="radio" name="unit" id="u-zip" value="zip"><span>By ZIP code</span></label>
+      </div>
+      <div class="toggles">
+        <label class="tg"><input type="checkbox" id="t-inc" checked> Income shading</label>
+        <label class="tg"><input type="checkbox" id="t-chg" checked> Other building changes (4)</label>
+        <label class="tg"><input type="checkbox" id="t-open" checked> Remaining sites (64)</label>
+        <label class="tg"><input type="checkbox" id="t-zip" checked> ZIP labels</label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>The seventeen</h2>
+      <ul class="roll" id="roll"></ul>
+    </div>
+
+    <div class="card">
+      <h2>Other building changes</h2>
+      <ul class="roll" id="chgroll"></ul>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <h3>School list</h3>
+      <p>The 17 closures and the building changes come from slide 27 of the TPS board
+      presentation <em>Superintendent's Proposal to Address Budget Deficit</em>
+      (14 elementary, 2 middle and 1 alternative site), presented at the
+      21 September 2026 board meeting.</p>
+      <p>Addresses for all 85 mapped campuses: <em>Tulsa Public Schools Directory of Schools,
+      2026&ndash;2027</em>, the district's printable directory, cross-checked against
+      individual school site footers on <code>tulsaschools.org</code>.</p>
+    </div>
+    <div>
+      <h3>Coordinates</h3>
+      <p>U.S. Census Bureau Geocoder, <code>Public_AR_Current</code> benchmark, one address at a
+      time. Every point on this map is a geocoder response, not an estimate &mdash; with one
+      exception: the 3100 block of W Edison St has no address range in Census TIGER, so the
+      Central Middle / Central High campus uses the published coordinate from the English
+      Wikipedia article <em>Central High School (Tulsa, Oklahoma)</em>.</p>
+      <p>Each campus is assigned to its census tract by point-in-polygon. Greenwood Leadership
+      Academy, Central and S.O.A.R. fall in Osage County: west Tulsa north of the river lies
+      across the county line.</p>
+    </div>
+    <div>
+      <h3>Income and boundaries</h3>
+      <p>Tract figures: ACS 2024 five-year, tables B19013 (median household income), B01003
+      (population) and B17020 (poverty status), from the
+      <a href="https://api.census.gov/data/2024/acs/acs5">Census Bureau API</a>. Tract
+      boundaries: Census cartographic boundary files (500k), 2022 vintage.</p>
+      <p>ZIP figures: ACS 2024 five-year as republished by
+      <a href="https://www.incomebyzipcode.com/oklahoma">IncomeByZipCode.com</a>. ZIP
+      boundaries: 2010 Census ZCTAs. ZCTAs approximate postal ZIPs, so a few campuses sit
+      a few metres across a line from the ZIP the district lists.</p>
+      <p>Base map: CARTO Positron / Dark Matter vector tiles on OpenStreetMap data, rendered
+      with <a href="https://maplibre.org">MapLibre GL JS</a>.</p>
+    </div>
+    <div>
+      <h3>Site detail and process</h3>
+      <p>Feeder pattern, enrollment, occupancy, bond-history and art/music staffing figures:
+      <a href="https://tulsaworld.com/news/local/education/article_21e480f4-493b-4d8c-9453-09d0d9c409c5.html">Tulsa
+      World</a>, &ldquo;18 schools listed in draft TPS closure, repurposing proposal,&rdquo;
+      21 September 2026, drawing on TPS 2025&ndash;26 building-capacity and enrollment data and
+      open records requests. The World's 18 is the 17 closure sites plus Central High School,
+      which is repurposed rather than closed.</p>
+      <p>Superintendent Ebony Johnson announced the consolidation review on 8 September 2026,
+      seeking $12 million in cuts; board votes were scheduled for 21 September, 5 October and
+      19 October 2026 (<a href="https://tulsaflyer.org/2026/09/18/schools-families/post/tulsa-public-schools-proposed-12m-cuts/">Tulsa
+      Flyer</a>, 18 September 2026).</p>
+      <p class="repo">Data and code: this page is an open repository. Corrections and additions
+      are welcome as pull requests &mdash; see the README for where each figure lives.</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="assets/app.js"></script>
+</body>
+</html>

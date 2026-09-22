@@ -1,0 +1,16 @@
+# Apache / cPanel: ES modules must be served as JavaScript or browsers refuse them.
+AddType text/javascript .mjs .js
+AddType application/geo+json .geojson
+AddType image/svg+xml .svg
+
+# Let the data and vendored library cache; the page itself stays fresh.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/javascript "access plus 7 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/geo+json "access plus 1 day"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/geo+json image/svg+xml
+</IfModule>

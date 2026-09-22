@@ -1,0 +1,2300 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.964378,
+     36.195219
+    ]
+   },
+   "properties": {
+    "id": "anderson-elementary",
+    "name": "Anderson Elementary",
+    "address": "1921 E 29th St N",
+    "zip": "74110",
+    "tract_geoid": "40143000200",
+    "level": "Elementary",
+    "status": "closure",
+    "number": 1,
+    "feeder": "McLain",
+    "enrollment": null,
+    "occupancy": "Above 60% — one of only two on the elementary list",
+    "staffing": "No full-time music teacher",
+    "bond": null,
+    "building": "Would receive Felicitas Mendez International School.",
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.907514,
+     36.159662
+    ]
+   },
+   "properties": {
+    "id": "bell-elementary",
+    "name": "Bell Elementary",
+    "address": "6304 E Admiral Blvd",
+    "zip": "74115",
+    "tract_geoid": "40143001700",
+    "level": "Elementary",
+    "status": "closure",
+    "number": 2,
+    "feeder": "Hale",
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": "No full-time music teacher",
+    "bond": "Renovated through the 2021 bond package",
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.858393,
+     36.124928
+    ]
+   },
+   "properties": {
+    "id": "dolores-huerta-elementary",
+    "name": "Dolores Huerta Elementary",
+    "address": "10620 E 27th St",
+    "zip": "74129",
+    "tract_geoid": "40143007313",
+    "level": "Elementary",
+    "status": "closure",
+    "number": 3,
+    "feeder": "East Central",
+    "enrollment": null,
+    "occupancy": "Above 60% — one of only two on the elementary list",
+    "staffing": "No full-time art teacher",
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.01269,
+     36.18021
+    ]
+   },
+   "properties": {
+    "id": "greenwood-leadership-academy",
+    "name": "Greenwood Leadership Academy",
+    "address": "1789 W Seminole St",
+    "zip": "74127",
+    "tract_geoid": "40113940006",
+    "level": "Elementary",
+    "status": "closure",
+    "number": 4,
+    "feeder": "Central",
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": "No full-time music teacher",
+    "bond": null,
+    "building": "Would house the district’s elementary alternative education program — the SOAR Academy.",
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.917917,
+     36.128535
+    ]
+   },
+   "properties": {
+    "id": "hoover-elementary",
+    "name": "Hoover Elementary",
+    "address": "2327 S Darlington Ave",
+    "zip": "74114",
+    "tract_geoid": "40143005300",
+    "level": "Elementary",
+    "status": "closure",
+    "number": 5,
+    "feeder": "Hale",
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": "No full-time art teacher",
+    "bond": "Identified for renovation in the 2026 bond proposal",
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.847307,
+     36.158118
+    ]
+   },
+   "properties": {
+    "id": "kerr-elementary",
+    "name": "Kerr Elementary",
+    "address": "202 S 117th East Ave",
+    "zip": "74128",
+    "tract_geoid": "40143007309",
+    "level": "Elementary",
+    "status": "closure",
+    "number": 6,
+    "feeder": "East Central",
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": "No full-time art teacher; no full-time music teacher",
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.9111,
+     36.081642
+    ]
+   },
+   "properties": {
+    "id": "key-elementary",
+    "name": "Key Elementary",
+    "address": "5702 S Irvington Ave",
+    "zip": "74135",
+    "tract_geoid": "40143006902",
+    "level": "Elementary",
+    "status": "closure",
+    "number": 7,
+    "feeder": "Memorial",
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.977553,
+     36.082439
+    ]
+   },
+   "properties": {
+    "id": "marshall-elementary",
+    "name": "Marshall Elementary",
+    "address": "1142 E 56th St",
+    "zip": "74105",
+    "tract_geoid": "40143006801",
+    "level": "Elementary",
+    "status": "closure",
+    "number": 8,
+    "feeder": "Memorial",
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": "No full-time music teacher",
+    "bond": "Identified for renovation in the 2026 bond proposal",
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.895599,
+     36.165232
+    ]
+   },
+   "properties": {
+    "id": "mitchell-elementary",
+    "name": "Mitchell Elementary",
+    "address": "733 N 73rd East Ave",
+    "zip": "74115",
+    "tract_geoid": "40143006000",
+    "level": "Elementary",
+    "status": "closure",
+    "number": 9,
+    "feeder": "East Central",
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": "No full-time music teacher",
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.856266,
+     36.137954
+    ]
+   },
+   "properties": {
+    "id": "peary-elementary",
+    "name": "Peary Elementary",
+    "address": "10818 E 17th St",
+    "zip": "74128",
+    "tract_geoid": "40143007304",
+    "level": "Elementary",
+    "status": "closure",
+    "number": 10,
+    "feeder": "East Central",
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": "No full-time music teacher",
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.023125,
+     36.091806
+    ]
+   },
+   "properties": {
+    "id": "robertson-elementary",
+    "name": "Robertson Elementary",
+    "address": "2721 W 50th St",
+    "zip": "74107",
+    "tract_geoid": "40143004800",
+    "level": "Elementary",
+    "status": "closure",
+    "number": 11,
+    "feeder": "Webster",
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": "No full-time art teacher",
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.953783,
+     36.165557
+    ]
+   },
+   "properties": {
+    "id": "sequoyah-elementary",
+    "name": "Sequoyah Elementary",
+    "address": "724 N Birmingham Ave",
+    "zip": "74110",
+    "tract_geoid": "40143001400",
+    "level": "Elementary",
+    "status": "closure",
+    "number": 12,
+    "feeder": "McLain",
+    "enrollment": "Attendance area gets priority for Rogers College Middle and High, but the school counts in McLain’s pattern",
+    "occupancy": null,
+    "staffing": null,
+    "bond": "Renovated through the 2021 bond package",
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.955336,
+     36.177085
+    ]
+   },
+   "properties": {
+    "id": "springdale-elementary",
+    "name": "Springdale Elementary",
+    "address": "2510 E Pine St",
+    "zip": "74110",
+    "tract_geoid": "40143001400",
+    "level": "Elementary",
+    "status": "closure",
+    "number": 13,
+    "feeder": "McLain",
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": "No full-time art teacher; no full-time music teacher",
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.931347,
+     36.184931
+    ]
+   },
+   "properties": {
+    "id": "unity-learning-academy",
+    "name": "Unity Learning Academy",
+    "address": "2137 N Pittsburg Ave",
+    "zip": "74115",
+    "tract_geoid": "40143000300",
+    "level": "Elementary",
+    "status": "closure",
+    "number": 14,
+    "feeder": "McLain",
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": "No full-time music teacher",
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.026927,
+     36.162761
+    ]
+   },
+   "properties": {
+    "id": "central-middle-school",
+    "name": "Central Middle School",
+    "address": "3101 W Edison St",
+    "zip": "74127",
+    "tract_geoid": "40113940006",
+    "level": "Middle",
+    "status": "closure",
+    "number": 15,
+    "feeder": "Central",
+    "enrollment": "Just over 200 students in 2025–26, against 230 middle-school-aged students who transferred out to other TPS sites. Among the district’s two smallest middle schools, with Webster.",
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": "Central High School, sharing this campus, would stop being a neighborhood school and become the hub for the district’s secondary alternative programs and Tulsa Virtual Academy.",
+    "coord_source": "Wikipedia infobox (no Census address range for this block)"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.892643,
+     36.060846
+    ]
+   },
+   "properties": {
+    "id": "thoreau-demonstration-academy",
+    "name": "Thoreau Demonstration Academy",
+    "address": "7370 E 71st St",
+    "zip": "74133",
+    "tract_geoid": "40143007619",
+    "level": "Middle",
+    "status": "closure",
+    "number": 16,
+    "feeder": "Magnet",
+    "enrollment": "Third smallest middle school in the district, behind Central and Webster",
+    "occupancy": "53% — the lowest of any TPS traditional secondary site in 2025–26",
+    "staffing": null,
+    "bond": "Renovated through the 2021 bond package",
+    "building": "Would be repurposed to house another district program.",
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.90798,
+     36.184384
+    ]
+   },
+   "properties": {
+    "id": "tulsa-met-ms-hs",
+    "name": "Tulsa MET MS/HS",
+    "address": "6201 E Virgin St",
+    "zip": "74115",
+    "tract_geoid": "40143011300",
+    "level": "High",
+    "status": "closure",
+    "number": 17,
+    "feeder": "Alternative",
+    "enrollment": "About 125 students in grades 6–12 in 2025–26; application-based",
+    "occupancy": null,
+    "staffing": null,
+    "bond": "Moved into the former Bryant Elementary in 2011, one of eight sites repurposed under Project Schoolhouse",
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.993603,
+     36.182668
+    ]
+   },
+   "properties": {
+    "id": "burroughs-elementary",
+    "name": "Burroughs Elementary",
+    "address": "1924 N Martin Luther King Blvd",
+    "zip": "74106",
+    "tract_geoid": "40143000800",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.929002,
+     36.082644
+    ]
+   },
+   "properties": {
+    "id": "carnegie-elementary",
+    "name": "Carnegie Elementary",
+    "address": "4309 E 56th St",
+    "zip": "74135",
+    "tract_geoid": "40143006901",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.940395,
+     36.180208
+    ]
+   },
+   "properties": {
+    "id": "celia-clinton-elementary",
+    "name": "Celia Clinton Elementary",
+    "address": "1740 N Harvard Ave",
+    "zip": "74115",
+    "tract_geoid": "40143000400",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.017385,
+     36.104371
+    ]
+   },
+   "properties": {
+    "id": "clinton-west-elementary",
+    "name": "Clinton West Elementary",
+    "address": "2224 W 41st St",
+    "zip": "74107",
+    "tract_geoid": "40143004800",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.978631,
+     36.098301
+    ]
+   },
+   "properties": {
+    "id": "college-bound-academy-–-brookside",
+    "name": "College Bound Academy – Brookside",
+    "address": "1110 E 45th Pl",
+    "zip": "74105",
+    "tract_geoid": "40143005001",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.864424,
+     36.126123
+    ]
+   },
+   "properties": {
+    "id": "college-bound-academy-–-eastside",
+    "name": "College Bound Academy – Eastside",
+    "address": "2525 S 101st East Ave",
+    "zip": "74129",
+    "tract_geoid": "40143007314",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.839773,
+     36.135809
+    ]
+   },
+   "properties": {
+    "id": "cooper-elementary",
+    "name": "Cooper Elementary",
+    "address": "1808 S 123rd East Ave",
+    "zip": "74128",
+    "tract_geoid": "40143007310",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.983481,
+     36.134968
+    ]
+   },
+   "properties": {
+    "id": "council-oak-elementary",
+    "name": "Council Oak Elementary",
+    "address": "1920 S Cincinnati Ave",
+    "zip": "74119",
+    "tract_geoid": "40143003200",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.84606,
+     36.127498
+    ]
+   },
+   "properties": {
+    "id": "disney-elementary",
+    "name": "Disney Elementary",
+    "address": "11702 E 25th St",
+    "zip": "74129",
+    "tract_geoid": "40143007306",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.943464,
+     36.082624
+    ]
+   },
+   "properties": {
+    "id": "eisenhower-international",
+    "name": "Eisenhower International",
+    "address": "3111 E 56th St",
+    "zip": "74105",
+    "tract_geoid": "40143008700",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.972666,
+     36.1115
+    ]
+   },
+   "properties": {
+    "id": "eliot-elementary",
+    "name": "Eliot Elementary",
+    "address": "1442 E 36th St",
+    "zip": "74105",
+    "tract_geoid": "40143004302",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.993597,
+     36.167106
+    ]
+   },
+   "properties": {
+    "id": "emerson-montessori",
+    "name": "Emerson Montessori",
+    "address": "910 N Martin Luther King Blvd",
+    "zip": "74106",
+    "tract_geoid": "40143000900",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.005677,
+     36.130437
+    ]
+   },
+   "properties": {
+    "id": "eugene-field-elementary",
+    "name": "Eugene Field Elementary",
+    "address": "2249 S Phoenix Ave",
+    "zip": "74107",
+    "tract_geoid": "40143004600",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.961471,
+     36.193477
+    ]
+   },
+   "properties": {
+    "id": "felicitas-mendez-international",
+    "name": "Felicitas Mendez International",
+    "address": "2703 N Yorktown Pl",
+    "zip": "74110",
+    "tract_geoid": "40143000200",
+    "level": "Elementary",
+    "status": "change",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": "Would relocate to the Anderson Elementary building.",
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.895418,
+     36.066442
+    ]
+   },
+   "properties": {
+    "id": "grissom-elementary",
+    "name": "Grissom Elementary",
+    "address": "6646 S 73rd East Ave",
+    "zip": "74133",
+    "tract_geoid": "40143007616",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.906343,
+     36.188172
+    ]
+   },
+   "properties": {
+    "id": "hamilton-elementary",
+    "name": "Hamilton Elementary",
+    "address": "2316 N Norwood Pl",
+    "zip": "74115",
+    "tract_geoid": "40143011300",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.977683,
+     36.202355
+    ]
+   },
+   "properties": {
+    "id": "hawthorne-elementary",
+    "name": "Hawthorne Elementary",
+    "address": "1105 E 33rd St N",
+    "zip": "74106",
+    "tract_geoid": "40143006200",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.993585,
+     36.23385
+    ]
+   },
+   "properties": {
+    "id": "john-hope-franklin-elementary",
+    "name": "John Hope Franklin Elementary",
+    "address": "5402 N Martin Luther King Blvd",
+    "zip": "74126",
+    "tract_geoid": "40143007900",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.953614,
+     36.152789
+    ]
+   },
+   "properties": {
+    "id": "kendall-whittier-elementary",
+    "name": "Kendall-Whittier Elementary",
+    "address": "2601 E 5th Pl",
+    "zip": "74104",
+    "tract_geoid": "40143002100",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.940266,
+     36.13663
+    ]
+   },
+   "properties": {
+    "id": "lanier-elementary",
+    "name": "Lanier Elementary",
+    "address": "1727 S Harvard Ave",
+    "zip": "74112",
+    "tract_geoid": "40143003700",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.851055,
+     36.151292
+    ]
+   },
+   "properties": {
+    "id": "lewis-and-clark-elementary",
+    "name": "Lewis and Clark Elementary",
+    "address": "737 S Garnett Rd",
+    "zip": "74128",
+    "tract_geoid": "40143007309",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.877659,
+     36.149466
+    ]
+   },
+   "properties": {
+    "id": "lindbergh-elementary",
+    "name": "Lindbergh Elementary",
+    "address": "931 S 89th East Ave",
+    "zip": "74112",
+    "tract_geoid": "40143008300",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.895692,
+     36.130994
+    ]
+   },
+   "properties": {
+    "id": "macarthur-elementary",
+    "name": "MacArthur Elementary",
+    "address": "2182 S 73rd East Ave",
+    "zip": "74129",
+    "tract_geoid": "40143008400",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.951435,
+     36.147282
+    ]
+   },
+   "properties": {
+    "id": "mayo-demonstration-academy",
+    "name": "Mayo Demonstration Academy",
+    "address": "1127 S Columbia Ave",
+    "zip": "74104",
+    "tract_geoid": "40143003500",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.963946,
+     36.07522
+    ]
+   },
+   "properties": {
+    "id": "mcclure-elementary",
+    "name": "McClure Elementary",
+    "address": "1770 E 61st St",
+    "zip": "74136",
+    "tract_geoid": "40143007644",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.901692,
+     36.16846
+    ]
+   },
+   "properties": {
+    "id": "mckinley-elementary",
+    "name": "McKinley Elementary",
+    "address": "6703 E King St",
+    "zip": "74115",
+    "tract_geoid": "40143006000",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.924807,
+     36.171087
+    ]
+   },
+   "properties": {
+    "id": "owen-elementary",
+    "name": "Owen Elementary",
+    "address": "1132 N Vandalia Ave",
+    "zip": "74115",
+    "tract_geoid": "40143001500",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.935025,
+     36.104246
+    ]
+   },
+   "properties": {
+    "id": "patrick-henry-elementary",
+    "name": "Patrick Henry Elementary",
+    "address": "3820 E 41st St",
+    "zip": "74135",
+    "tract_geoid": "40143005200",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.891645,
+     36.080785
+    ]
+   },
+   "properties": {
+    "id": "salk-elementary",
+    "name": "Salk Elementary",
+    "address": "7625 E 58th St",
+    "zip": "74145",
+    "tract_geoid": "40143006903",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.875907,
+     36.123668
+    ]
+   },
+   "properties": {
+    "id": "skelly-elementary",
+    "name": "Skelly Elementary",
+    "address": "2714 S 90th East Ave",
+    "zip": "74129",
+    "tract_geoid": "40143008501",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.995332,
+     36.244964
+    ]
+   },
+   "properties": {
+    "id": "tulsa-legacy-charter:-primary",
+    "name": "Tulsa Legacy Charter: Primary",
+    "address": "105 E 63rd St N",
+    "zip": "74126",
+    "tract_geoid": "40143009101",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.029622,
+     36.106665
+    ]
+   },
+   "properties": {
+    "id": "under-the-canopy-school",
+    "name": "Under the Canopy School",
+    "address": "3205 W 39th St",
+    "zip": "74107",
+    "tract_geoid": "40143004700",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.038707,
+     36.157802
+    ]
+   },
+   "properties": {
+    "id": "wayman-tisdale-fine-arts-academy",
+    "name": "Wayman Tisdale Fine Arts Academy",
+    "address": "4132 W Cameron St",
+    "zip": "74127",
+    "tract_geoid": "40143002900",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.980966,
+     36.21028
+    ]
+   },
+   "properties": {
+    "id": "whitman-elementary",
+    "name": "Whitman Elementary",
+    "address": "3924 N Lansing Ave",
+    "zip": "74106",
+    "tract_geoid": "40143008002",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.913213,
+     36.111235
+    ]
+   },
+   "properties": {
+    "id": "zarrow-international",
+    "name": "Zarrow International",
+    "address": "3613 S Hudson Ave",
+    "zip": "74135",
+    "tract_geoid": "40143007000",
+    "level": "Elementary",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.986251,
+     36.175855
+    ]
+   },
+   "properties": {
+    "id": "carver-middle-school",
+    "name": "Carver Middle School",
+    "address": "624 E Oklahoma Pl",
+    "zip": "74106",
+    "tract_geoid": "40143001000",
+    "level": "Middle",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.841364,
+     36.133511
+    ]
+   },
+   "properties": {
+    "id": "east-central-middle-school",
+    "name": "East Central Middle School",
+    "address": "12121 E 21st St",
+    "zip": "74129",
+    "tract_geoid": "40143007310",
+    "level": "Middle",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.947847,
+     36.10427
+    ]
+   },
+   "properties": {
+    "id": "edison-preparatory-middle",
+    "name": "Edison Preparatory Middle",
+    "address": "2906 E 41st St",
+    "zip": "74105",
+    "tract_geoid": "40143005100",
+    "level": "Middle",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.899995,
+     36.132062
+    ]
+   },
+   "properties": {
+    "id": "hale-middle-school",
+    "name": "Hale Middle School",
+    "address": "2177 S 67th East Ave",
+    "zip": "74129",
+    "tract_geoid": "40143008400",
+    "level": "Middle",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.968598,
+     36.184313
+    ]
+   },
+   "properties": {
+    "id": "kipp-tulsa-college-preparatory",
+    "name": "KIPP Tulsa College Preparatory",
+    "address": "1661 E Virgin St",
+    "zip": "74106",
+    "tract_geoid": "40143000500",
+    "level": "Middle",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.893625,
+     36.082593
+    ]
+   },
+   "properties": {
+    "id": "memorial-middle-school",
+    "name": "Memorial Middle School",
+    "address": "7502 E 57th St",
+    "zip": "74145",
+    "tract_geoid": "40143006903",
+    "level": "Middle",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.963784,
+     36.224138
+    ]
+   },
+   "properties": {
+    "id": "monroe-demonstration-academy",
+    "name": "Monroe Demonstration Academy",
+    "address": "2010 E 48th St N",
+    "zip": "74130",
+    "tract_geoid": "40143005700",
+    "level": "Middle",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.933542,
+     36.152769
+    ]
+   },
+   "properties": {
+    "id": "rogers-college-middle",
+    "name": "Rogers College Middle",
+    "address": "3909 E 5th Pl",
+    "zip": "74112",
+    "tract_geoid": "40143001900",
+    "level": "Middle",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.904494,
+     36.142124
+    ]
+   },
+   "properties": {
+    "id": "tulsa-honor-academy-–-flores-ms",
+    "name": "Tulsa Honor Academy – Flores MS",
+    "address": "1421 S Sheridan Rd",
+    "zip": "74112",
+    "tract_geoid": "40143007101",
+    "level": "Middle",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.908949,
+     36.158398
+    ]
+   },
+   "properties": {
+    "id": "tulsa-honor-academy-middle",
+    "name": "Tulsa Honor Academy Middle",
+    "address": "209 S Lakewood Ave",
+    "zip": "74112",
+    "tract_geoid": "40143001700",
+    "level": "Middle",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.975463,
+     36.24055
+    ]
+   },
+   "properties": {
+    "id": "tulsa-legacy-charter:-upper",
+    "name": "Tulsa Legacy Charter: Upper",
+    "address": "6001 N Peoria Ave",
+    "zip": "74126",
+    "tract_geoid": "40143009104",
+    "level": "Middle",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.007199,
+     36.15878
+    ]
+   },
+   "properties": {
+    "id": "tulsa-school-of-arts-and-sciences-ms",
+    "name": "Tulsa School of Arts & Sciences MS",
+    "address": "1202 W Easton St",
+    "zip": "74127",
+    "tract_geoid": "40143002700",
+    "level": "Middle",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.014295,
+     36.105468
+    ]
+   },
+   "properties": {
+    "id": "webster-middle-school",
+    "name": "Webster Middle School",
+    "address": "1919 W 40th St",
+    "zip": "74107",
+    "tract_geoid": "40143004800",
+    "level": "Middle",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.97195,
+     36.18964
+    ]
+   },
+   "properties": {
+    "id": "booker-t-washington-high",
+    "name": "Booker T. Washington High",
+    "address": "1514 E Zion St",
+    "zip": "74106",
+    "tract_geoid": "40143000500",
+    "level": "High",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.026927,
+     36.162761
+    ]
+   },
+   "properties": {
+    "id": "central-high-school",
+    "name": "Central High School",
+    "address": "3101 W Edison St",
+    "zip": "74127",
+    "tract_geoid": "40113940006",
+    "level": "High",
+    "status": "change",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": "Would stop being a neighborhood school and become the hub for the district’s secondary alternative programs and Tulsa Virtual Academy.",
+    "coord_source": "Wikipedia infobox (no Census address range for this block)"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.839112,
+     36.147912
+    ]
+   },
+   "properties": {
+    "id": "east-central-high-school",
+    "name": "East Central High School",
+    "address": "12150 E 11th St",
+    "zip": "74128",
+    "tract_geoid": "40143007310",
+    "level": "High",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.947847,
+     36.10427
+    ]
+   },
+   "properties": {
+    "id": "edison-preparatory-high",
+    "name": "Edison Preparatory High",
+    "address": "2906 E 41st St",
+    "zip": "74105",
+    "tract_geoid": "40143005100",
+    "level": "High",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.896278,
+     36.13339
+    ]
+   },
+   "properties": {
+    "id": "nathan-hale-high-school",
+    "name": "Nathan Hale High School",
+    "address": "6960 E 21st St",
+    "zip": "74129",
+    "tract_geoid": "40143008400",
+    "level": "High",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.040392,
+     36.149481
+    ]
+   },
+   "properties": {
+    "id": "kipp-tulsa-university-prep",
+    "name": "KIPP Tulsa University Prep",
+    "address": "541 S 43rd West Ave",
+    "zip": "74127",
+    "tract_geoid": "40143003000",
+    "level": "High",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.975486,
+     36.224562
+    ]
+   },
+   "properties": {
+    "id": "mclain-high-school",
+    "name": "McLain High School",
+    "address": "4929 N Peoria Ave",
+    "zip": "74126",
+    "tract_geoid": "40143005700",
+    "level": "High",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.913464,
+     36.07966
+    ]
+   },
+   "properties": {
+    "id": "memorial-high-school",
+    "name": "Memorial High School",
+    "address": "5840 S Hudson Ave",
+    "zip": "74135",
+    "tract_geoid": "40143006902",
+    "level": "High",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.933542,
+     36.152769
+    ]
+   },
+   "properties": {
+    "id": "rogers-college-high",
+    "name": "Rogers College High",
+    "address": "3909 E 5th Pl",
+    "zip": "74112",
+    "tract_geoid": "40143001900",
+    "level": "High",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.904494,
+     36.142124
+    ]
+   },
+   "properties": {
+    "id": "tulsa-honor-academy-high",
+    "name": "Tulsa Honor Academy High",
+    "address": "1421 S Sheridan Rd",
+    "zip": "74112",
+    "tract_geoid": "40143007101",
+    "level": "High",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.007199,
+     36.15878
+    ]
+   },
+   "properties": {
+    "id": "tulsa-school-of-arts-and-sciences-hs",
+    "name": "Tulsa School of Arts & Sciences HS",
+    "address": "1202 W Easton St",
+    "zip": "74127",
+    "tract_geoid": "40143002700",
+    "level": "High",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.014295,
+     36.105468
+    ]
+   },
+   "properties": {
+    "id": "webster-high-school",
+    "name": "Webster High School",
+    "address": "1919 W 40th St",
+    "zip": "74107",
+    "tract_geoid": "40143004800",
+    "level": "High",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.986567,
+     36.220567
+    ]
+   },
+   "properties": {
+    "id": "new-vision-academy",
+    "name": "New Vision Academy",
+    "address": "525 E 46th St N",
+    "zip": "74126",
+    "tract_geoid": "40143007900",
+    "level": "Alternative / other",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.986567,
+     36.220567
+    ]
+   },
+   "properties": {
+    "id": "north-star-academy",
+    "name": "North Star Academy",
+    "address": "525 E 46th St N",
+    "zip": "74126",
+    "tract_geoid": "40143007900",
+    "level": "Alternative / other",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.938717,
+     36.162661
+    ]
+   },
+   "properties": {
+    "id": "phoenix-rising",
+    "name": "Phoenix Rising",
+    "address": "3441 E Archer St",
+    "zip": "74115",
+    "tract_geoid": "40143001500",
+    "level": "Alternative / other",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.005221,
+     36.172761
+    ]
+   },
+   "properties": {
+    "id": "soar",
+    "name": "S.O.A.R.",
+    "address": "1205 W Newton St",
+    "zip": "74127",
+    "tract_geoid": "40113940006",
+    "level": "Alternative / other",
+    "status": "change",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": "Would move into the Greenwood Leadership Academy building as the district’s elementary alternative education program.",
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.922431,
+     36.147121
+    ]
+   },
+   "properties": {
+    "id": "street-school",
+    "name": "Street School",
+    "address": "1135 S Yale Ave",
+    "zip": "74112",
+    "tract_geoid": "40143003800",
+    "level": "Alternative / other",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.950533,
+     36.213314
+    ]
+   },
+   "properties": {
+    "id": "traice-academy-ms-and-hs",
+    "name": "TRAICE Academy (MS & HS)",
+    "address": "2740 E 41st St N",
+    "zip": "74110",
+    "tract_geoid": "40143008001",
+    "level": "Alternative / other",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.94061,
+     36.082619
+    ]
+   },
+   "properties": {
+    "id": "tulsa-transition-academy",
+    "name": "Tulsa Transition Academy",
+    "address": "3213 E 56th St",
+    "zip": "74105",
+    "tract_geoid": "40143008700",
+    "level": "Alternative / other",
+    "status": "open",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": null,
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.986567,
+     36.220567
+    ]
+   },
+   "properties": {
+    "id": "tulsa-virtual-academy-ms-and-hs",
+    "name": "Tulsa Virtual Academy (MS & HS)",
+    "address": "525 E 46th St N",
+    "zip": "74126",
+    "tract_geoid": "40143007900",
+    "level": "Alternative / other",
+    "status": "change",
+    "number": null,
+    "feeder": null,
+    "enrollment": null,
+    "occupancy": null,
+    "staffing": null,
+    "bond": null,
+    "building": "Would move onto the Central High School campus.",
+    "coord_source": "US Census Geocoder, Public_AR_Current"
+   }
+  }
+ ]
+}
