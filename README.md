@@ -75,6 +75,10 @@ works with no changes. Two things matter on the host:
 
 - `.mjs` files must be served with a JavaScript MIME type; the included `.htaccess` sets
   this for Apache / cPanel. Without it, browsers refuse to load the MapLibre module.
+- The same `.htaccess` makes `index.html`, `assets/*`, and `data/*` revalidate on every visit
+  (`Cache-Control: no-cache`, served as cheap 304s) while the vendored MapLibre modules and
+  images cache for a week. Without that, a browser that visited before a deploy can pair the new
+  page with a week-old script.
 - The page fetches its data, so it must be served over HTTP, never opened from `file://`.
 
 On cPanel, the simplest route is **Git Version Control → Create → Clone a Repository** with
