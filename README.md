@@ -82,6 +82,12 @@ this repo's public URL and a repository path of `public_html/tps-closures`. cPan
 serves it at `/tps-closures/` and "Update from Remote" pulls new commits. The site's own
 private repository never needs to reference this one.
 
+## Social preview
+
+`og-image.png` (2400×1260) is the Open Graph / Twitter card image referenced from `index.html`.
+`tools/make_og_image.py` regenerates it from the page itself in headless Chromium; rerun it after
+changing the closure list or the header figures.
+
 ## Tests
 
 `tests/test_map.py` drives the real page in headless Chromium with Playwright and exercises
