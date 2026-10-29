@@ -25,8 +25,79 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="vendor/maplibre-gl/maplibre-gl.css">
 <link rel="stylesheet" href="assets/style.css">
+<style id="es-sitebar-css">
+  .es-sitebar { display:flex; justify-content:space-between; align-items:center; gap:6px 16px; flex-wrap:wrap; padding:9px 16px; background:#3d472b; color:#f5ead8; font:600 14px/1.25 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; position:relative; z-index:2000; }
+  .es-sitebar a { color:#f5ead8; text-decoration:none; }
+  .es-sitebar a:hover { text-decoration:underline; text-underline-offset:3px; }
+  .es-sitebar__home span { color:#e09a62; }
+  .es-sitebar__links { display:flex; gap:16px; flex-wrap:wrap; font-weight:500; }
+  .es-sitefoot { background:#3d472b; color:#f5ead8; padding:28px 16px 32px; font:15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  .es-sitefoot__in { max-width:1000px; margin:0 auto; display:flex; flex-wrap:wrap; gap:20px 48px; justify-content:space-between; }
+  .es-sitefoot p { margin:0 0 10px; max-width:52ch; }
+  .es-sitefoot a { color:#f5ead8; text-underline-offset:3px; }
+  .es-sitefoot h2 { margin:0 0 8px; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#d7d0bd; }
+  .es-sitefoot ul { margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:6px; }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Dataset",
+ "name": "Tulsa Public Schools campuses proposed for closure, September 2026",
+ "description": "The 17 Tulsa Public Schools campuses proposed for closure in the district's September 2026 budget recommendation, with enrollment, building use, feeder patterns and welcoming schools, mapped against median household income by census tract and ZIP code from the American Community Survey 2024 5-year estimates.",
+ "url": "https://earthseed.technology/tps-closures/",
+ "creator": {
+  "@type": "Person",
+  "@id": "https://earthseed.technology/about/#carlos",
+  "name": "Carlos Moreno",
+  "url": "https://earthseed.technology/about/"
+ },
+ "publisher": {
+  "@type": "ProfessionalService",
+  "@id": "https://earthseed.technology/#org",
+  "name": "earthseed technology",
+  "url": "https://earthseed.technology/"
+ },
+ "isAccessibleForFree": true,
+ "keywords": [
+  "Tulsa Public Schools",
+  "school closures",
+  "school consolidation",
+  "median household income",
+  "Tulsa",
+  "Oklahoma",
+  "census tracts"
+ ],
+ "spatialCoverage": {
+  "@type": "Place",
+  "name": "Tulsa, Oklahoma"
+ },
+ "temporalCoverage": "2026",
+ "isBasedOn": [
+  "https://resources.finalsite.net/images/v1790037783/tulsaschoolsorg/mj2h4piedeoyfz4g2u40/92126SuperintendentBudgetRecommendations.pdf",
+  "https://api.census.gov/data/2024/acs/acs5"
+ ],
+ "distribution": [
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/geo+json",
+   "contentUrl": "https://earthseed.technology/tps-closures/data/schools.geojson"
+  },
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/geo+json",
+   "contentUrl": "https://earthseed.technology/tps-closures/data/tracts.geojson"
+  }
+ ],
+ "license": "https://opensource.org/licenses/MIT"
+}
+</script>
 </head>
 <body>
+<nav class="es-sitebar" aria-label="earthseed technology">
+  <a class="es-sitebar__home" href="../">earthseed technology<span>.</span></a>
+  <span class="es-sitebar__links"><a href="../#services">services</a><a href="../work/">work</a><a href="../about/">about</a><a href="../contact.html">contact</a></span>
+</nav>
+
 
 <header class="mast">
   <div class="wrap mast-in">
@@ -173,6 +244,7 @@
   <div class="wrap foot">
     <div>
       <h3>School list</h3>
+      <p id="static-closures">The 17 campuses proposed for closure, numbered as on the map: 1. Anderson Elementary, 2. Bell Elementary, 3. Dolores Huerta Elementary, 4. Greenwood Leadership Academy, 5. Hoover Elementary, 6. Kerr Elementary, 7. Key Elementary, 8. Marshall Elementary, 9. Mitchell Elementary, 10. Peary Elementary, 11. Robertson Elementary, 12. Sequoyah Elementary, 13. Springdale Elementary, 14. Unity Learning Academy, 15. Central Middle School, 16. Thoreau Demonstration Academy, 17. Tulsa MET MS/HS.</p>
       <p>The 17 closures and the building changes come from slide 27 of the TPS board
       presentation <a href="https://resources.finalsite.net/images/v1790037783/tulsaschoolsorg/mj2h4piedeoyfz4g2u40/92126SuperintendentBudgetRecommendations.pdf"><em>Superintendent's
       Proposal to Address Budget Deficit</em></a> (14 elementary, 2 middle and 1 alternative
@@ -233,5 +305,22 @@
 </footer>
 
 <script type="module" src="assets/app.js"></script>
+<footer class="es-sitefoot">
+  <div class="es-sitefoot__in">
+    <div>
+      <p><strong>earthseed technology</strong> maps public infrastructure and analyzes environmental and public data for Oklahoma towns, tribal nations, nonprofits and newsrooms. Carlos Moreno, Tulsa, OK.</p>
+      <p><a href="../#services">See services</a> &middot; <a href="../contact.html">Start a conversation</a></p>
+    </div>
+    <div>
+      <h2>More work</h2>
+      <ul>
+        <li><a href="../tar-creek-water/">From mine water to tap water</a></li>
+        <li><a href="../tar-creek/">45 years of mine water at Tar Creek</a></li>
+        <li><a href="../snap-tulsa/">SNAP gaps in Tulsa County</a></li>
+        <li><a href="../work/">All work</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
